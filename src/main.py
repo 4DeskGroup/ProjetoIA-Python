@@ -1,23 +1,18 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
-from dotenv import load_dotenv
+from llm.google_llm import create_llm
 
-load_dotenv()
+def main():
+    llm = create_llm()
 
-llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-pro",
-    temperature=0,
-    max_tokens=None,
-    timeout=None,
-    max_retries=2,
-)
+    messages = [
+        (
+            "system",
+            "Você é um assistente que realiza traduções do inglês para o português. Traduza a sentença do usuário.",
+        ),
+        ("human", "I love programming."),
+    ]
 
-messages = [
-    (
-        "system",
-        "Você é um assistente que traduz do inglês para o português. Traduza a sentença do usuário.",
-    ),
-    ("human", "I love programming."),
-]
-ai_msg = llm.invoke(messages)
+    ai_msg = llm.invoke(messages)
+    print(ai_msg.content)
 
-print(ai_msg.content)
+if __name__ == "__main__":
+    main()
