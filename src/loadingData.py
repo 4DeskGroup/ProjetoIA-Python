@@ -1,25 +1,21 @@
 import os
 import requests
 import pandas as pd
-
 from dotenv import load_dotenv
-
-# from datasets import load_dataset
-
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.schema import Document
 from langchain_community.vectorstores import FAISS
-from langchain.prompts import ChatPromptTemplate
+from langchain.prompts import PromptTemplate
 from langchain.schema.runnable import RunnablePassthrough
 from langchain.schema.output_parser import StrOutputParser
 
+# Carregar variáveis de ambiente
 load_dotenv()
 os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
 
-# ds = load_dataset("ruanchaves/b2w-reviews01")
-
+# Baixar e salvar o arquivo CSV
 url = "https://raw.githubusercontent.com/americanas-tech/b2w-reviews01/4639429ec698d7821fc99a0bc665fa213d9fcd5a/B2W-Reviews01.csv"
 response = requests.get(url)
 rawdata = response.text
@@ -27,62 +23,83 @@ rawdata = response.text
 with open("B2W-Reviews01.csv", "w", encoding='utf-8') as f:
     f.write(rawdata)
 
-data = pd.read_csv("B2W-Reviews01.csv", low_memory = False)
+# Ler o arquivo CSV
+data = pd.read_csv("B2W-Reviews01.csv", low_memory=False)
+
+# Remover duplicatas
+data = data.drop_duplicates(subset=['product_id', 'product_name'])
 
 documents = []
 
-for _, row in data.head(20).iterrows():  # Use apenas as primeiras 10 linhas
+# Processar cada linha do DataFrame
+for _, row in data.head(9).iterrows():
     text = (
-        f"Submission Date: {row['submission_date']}\n"
-        f"Reviewer ID: {row['reviewer_id']}\n"
-        f"Product ID: {row['product_id']}\n"
-        f"Product Name: {row['product_name']}\n"
-        f"Product Brand: {row['product_brand']}\n"
-        f"Site Category LV1: {row['site_category_lv1']}\n"
-        f"Site Category LV2: {row['site_category_lv2']}\n"
-        f"Review Title: {row['review_title']}\n"
-        f"Overall Rating: {row['overall_rating']}\n"
-        f"Recommend to a Friend: {row['recommend_to_a_friend']}\n"
-        f"Review Text: {row['review_text']}\n"
-        f"Reviewer Birth Year: {row['reviewer_birth_year']}\n"
-        f"Reviewer Gender: {row['reviewer_gender']}\n"
-        f"Reviewer State: {row['reviewer_state']}\n"
+        f"Data de Submissão: {row.get('submission_date', 'Não disponível')}\n"
+        f"ID do Revisor: {row.get('reviewer_id', 'Não disponível')}\n"
+        f"ID do Produto: {row.get('product_id', 'Não disponível')}\n"
+        f"Nome do Produto: {row.get('product_name', 'Não disponível')}\n"
+        f"Marca do Produto: {row.get('product_brand', 'Não disponível')}\n"
+        f"Categoria do Site LV1: {row.get('site_category_lv1', 'Não disponível')}\n"
+        f"Categoria do Site LV2: {row.get('site_category_lv2', 'Não disponível')}\n"
+        f"Título da Revisão: {row.get('review_title', 'Não disponível')}\n"
+        f"Avaliação Geral: {row.get('overall_rating', 'Não disponível')}\n"
+        f"Recomendaria a um Amigo: {row.get('recommend_to_a_friend', 'Não disponível')}\n"
+        f"Texto da Revisão: {row.get('review_text', 'Não disponível')}\n"
+        f"Ano de Nascimento do Revisor: {row.get('reviewer_birth_year', 'Não disponível')}\n"
+        f"Gênero do Revisor: {row.get('reviewer_gender', 'Não disponível')}\n"
+        f"Estado do Revisor: {row.get('reviewer_state', 'Não disponível')}\n"
     )
     documents.append(Document(page_content=text))
 
-
-text_splitter = RecursiveCharacterTextSplitter(chunk_size = 1000, chunk_overlap = 50)
+# Dividir os documentos em chunks
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=10000, chunk_overlap=150)  # Aumentar tamanho do chunk
 text_chunks = text_splitter.split_documents(documents)
 
-# for i, chunk in enumerate(text_chunks):
-#     print(f"Chunk {i+1}:\n{chunk.page_content}\n")
+# Remover duplicatas dos chunks
+unique_chunks = []
+seen_texts = set()
+for chunk in text_chunks:
+    if chunk.page_content not in seen_texts:
+        seen_texts.add(chunk.page_content)
+        unique_chunks.append(chunk)
 
+# Criar embeddings e vetorstore
 embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
-
-vectorstore=FAISS.from_documents(text_chunks, embeddings)
+vectorstore = FAISS.from_documents(unique_chunks, embeddings)
 retriever = vectorstore.as_retriever()
 
-template="""You are an assistant for question-answering tasks.
-Use the following pieces of retrieved context to answer the question.
-If you don't know the answer, just say that you don't know.
-Use ten sentences maximum and keep the answer concise.
-Question: {question}
-Context: {context}
-Answer:
+# Imprimir chunks após remover duplicatas
+print("Chunks após remover duplicatas:")
+for chunk in unique_chunks:
+    print(chunk.page_content)
+    print('-' * 80)
+
+print(f"Total de chunks criados: {len(text_chunks)}")
+print(f"Total de chunks únicos: {len(unique_chunks)}")
+
+# Definir template e prompt
+template = """Você é um assistente que precisa responder perguntas com base no conteúdo de {{retriever}}.
+Use os pedaços de texto retornados como base para suas respostas. Se não souber, diga "Não Posso te Responder Isso :)". 
+Se houver mais de uma resposta possível, liste todas.
+Pergunta: {question}
+Contexto: {context}
+Resposta:
 """
 
-prompt = ChatPromptTemplate.from_template(template)
-
+prompt = PromptTemplate.from_template(template)
 output_parser = StrOutputParser()
 
+# Inicializar modelo e cadeia de processamento
 llm_model = ChatGoogleGenerativeAI(model='gemini-pro', temperature=0.5)
-
 rag_chain = (
-    {"context": retriever,  "question": RunnablePassthrough()}
+    {"context": retriever, "question": RunnablePassthrough()}
     | prompt
     | llm_model
     | output_parser
 )
 
-print(rag_chain.invoke("Quantos produtos overall_rating igual a 4? Destaque os nomes"))
-
+# Receber e processar a pergunta do usuário
+user_question = input("Digite sua Pergunta: ")
+print("Pergunta recebida:", user_question)
+responseQuestion = rag_chain.invoke(user_question)
+print("Resposta gerada:", responseQuestion)
