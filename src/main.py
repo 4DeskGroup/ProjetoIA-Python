@@ -1,25 +1,18 @@
-from langchain_google_genai import GoogleGenerativeAI
-from langchain.prompts import PromptTemplate
-from langchain.chains import LLMChain
-from dotenv import load_dotenv
+from langchain_google_genai import ChatGoogleGenerativeAI
 import os
 
-load_dotenv()
+os.environ["GOOGLE_API_KEY"] = "AIzaSyBZNQhwzyjIFMjyvc6T600e5cUiZAU_6zs"
 
-def oscar(filme, ano, llm):
-    # Use Google Generative AI model
-    #llm = GoogleGenerativeAI(model="gemini-pro")
-    
-    prompt_oscar= PromptTemplate(input_variables=['filme', 'ano'],
-                                        template="Quantos oscars o filme {filme} ganhou em {ano}")    
-    oscar_chain = LLMChain(llm=llm, prompt=prompt_oscar)
-    
-    response = oscar_chain({'filme':filme, 'ano':ano})
+llm = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.9)
 
-    return response
+def generate_cat_name():
+    names = llm.invoke("Você tem um gatinho fêmea novo e gostaria de dar um nome. Me dê uma lista de 5 nomes.")
 
-llm = GoogleGenerativeAI(model="gemini-pro")
+    return names.content
 
-if __name__ == "__main__":
-    response =oscar('Minions', '2024', llm=llm) 
-    print(response['text'])
+def states_of_brazil():
+    states = llm.invoke("Liste todos os estados do Brasil e diga quanto tem ao final da sentença.")
+
+    return states.content
+
+print(states_of_brazil())
