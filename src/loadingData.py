@@ -27,14 +27,13 @@ with open("B2W-Reviews01.csv", "w", encoding='utf-8') as f:
 data = pd.read_csv("B2W-Reviews01.csv", low_memory=False)
 
 # Remover duplicatas
-data = data.drop_duplicates(subset=['product_name'])
+data = data.drop_duplicates(subset=['product_id', 'product_name'])
 
-# Setar na para Informação não Disponível 
-data = data.fillna("Informação não disponível")
+documents = []
 
-# Formatação de chunck/docs e limitação de quantos chuncks retornar
-def format_review(row):
-    return (
+# Processar cada linha do DataFrame
+for _, row in data.head(9).iterrows():
+    text = (
         f"Data de Submissão: {row.get('submission_date', 'Não disponível')}\n"
         f"ID do Revisor: {row.get('reviewer_id', 'Não disponível')}\n"
         f"ID do Produto: {row.get('product_id', 'Não disponível')}\n"
@@ -50,11 +49,10 @@ def format_review(row):
         f"Gênero do Revisor: {row.get('reviewer_gender', 'Não disponível')}\n"
         f"Estado do Revisor: {row.get('reviewer_state', 'Não disponível')}\n"
     )
-
-documents = [Document(page_content=format_review(row)) for _, row in data.head(15).iterrows()]
+    documents.append(Document(page_content=text))
 
 # Dividir os documentos em chunks
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=10000, chunk_overlap=150)  # Aumentar tamanho do chunk
 text_chunks = text_splitter.split_documents(documents)
 
 # Remover duplicatas dos chunks
@@ -65,10 +63,10 @@ for chunk in text_chunks:
         seen_texts.add(chunk.page_content)
         unique_chunks.append(chunk)
 
-# Criar embeddings e vetorstore, configurar vectorstore para limitação com chunck
+# Criar embeddings e vetorstore
 embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 vectorstore = FAISS.from_documents(unique_chunks, embeddings)
-retriever = vectorstore.as_retriever(search_kwargs={"k": len(unique_chunks)})
+retriever = vectorstore.as_retriever()
 
 # Imprimir chunks após remover duplicatas
 print("Chunks após remover duplicatas:")
@@ -80,24 +78,9 @@ print(f"Total de chunks criados: {len(text_chunks)}")
 print(f"Total de chunks únicos: {len(unique_chunks)}")
 
 # Definir template e prompt
-template = """Você é um assistente treinado para responder perguntas com base nas seguintes informações:
-- Data de Submissão
-- ID do Revisor
-- ID do Produto
-- Nome do Produto
-- Marca do Produto
-- Categoria do Site LV1
-- Categoria do Site LV2
-- Título da Revisão
-- Avaliação Geral
-- Recomendaria a um Amigo
-- Texto da Revisão
-- Ano de Nascimento do Revisor
-- Gênero do Revisor
-- Estado do Revisor
-
-Use os pedaços de texto retornados como base para suas respostas. Se a informação não estiver disponível ou não souber a resposta, diga "Não é Possível Retornar esse Dado".
-
+template = """Você é um assistente que precisa responder perguntas com base no conteúdo de {{retriever}}.
+Use os pedaços de texto retornados como base para suas respostas. Se não souber, diga "Não Posso te Responder Isso :)". 
+Se houver mais de uma resposta possível, liste todas.
 Pergunta: {question}
 Contexto: {context}
 Resposta:
@@ -107,7 +90,7 @@ prompt = PromptTemplate.from_template(template)
 output_parser = StrOutputParser()
 
 # Inicializar modelo e cadeia de processamento
-llm_model = ChatGoogleGenerativeAI(model='gemini-pro', temperature=0.2)
+llm_model = ChatGoogleGenerativeAI(model='gemini-pro', temperature=0.5)
 rag_chain = (
     {"context": retriever, "question": RunnablePassthrough()}
     | prompt
