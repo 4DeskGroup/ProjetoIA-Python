@@ -1,6 +1,1 @@
-# Ignorar o arquivo .env
-.env
-
-# Ignorar diretórios virtuais
 /python
-/venv
