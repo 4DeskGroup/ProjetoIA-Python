@@ -14,7 +14,7 @@ def get_embedder_model():
 
 # Defina o modelo LLM
 def get_llm_model():
-    return GoogleGenerativeAI(model="gemini-pro")
+    return GoogleGenerativeAI(model="gemini-1.5-pro")
 
 # Inicializa o índice FAISS
 def initialize_faiss_index(dimension=384):
