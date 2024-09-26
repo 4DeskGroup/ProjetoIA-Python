@@ -18,6 +18,17 @@ nltk.download('stopwords')
 nlp = spacy.load("pt_core_news_sm")
 
 nltk_stopwords = set(stopwords.words('portuguese'))
+
+# Palavras a serem removidas das stopwords
+palavras_para_manter = {
+    'não', 'nunca', 'nenhum', 'eu', 'você', 'nosso', 'nossa', 
+    'meu', 'minha', 'este', 'esta', 'esse', 'essa', 'aquele', 
+    'aquilo', 'isso', 'mas', 'e', 'ou'
+}
+
+# Atualiza a lista de stopwords
+nltk_stopwords = nltk_stopwords - palavras_para_manter
+
 punctuation_table = str.maketrans('', '', string.punctuation)
 
 def preprocess_text(text):
