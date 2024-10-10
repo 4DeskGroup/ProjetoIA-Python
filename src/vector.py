@@ -131,7 +131,7 @@ def dataset_to_vector(dataset_name, use_saved_embeddings=False):
         print(f"Total de documentos após split: {len(split_documents)}")
 
         print("Obtendo embeddings...")
-        embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+        embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", temperature=0.4)
         document_embeddings = embeddings.embed_documents(split_documents)
 
         print(f"Embeddings gerados: {len(document_embeddings)}")
