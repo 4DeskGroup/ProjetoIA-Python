@@ -75,12 +75,31 @@ def initialize_retrieval_chain():
 
 retriever_chain = initialize_retrieval_chain()
 
+# Lista para armazenar o histórico de perguntas e respostas
+conversation_history = []
+
+# Função para construir o contexto a partir do histórico de conversas
+def build_context_from_history():
+    context = ""
+    for entry in conversation_history:
+        context += f"Pergunta: {entry['question']}\n"
+        context += f"Resposta: {entry['answer']}\n"
+    return context
+
+# Função que ajusta o retriever chain e inclui o contexto das respostas anteriores
 def ask_question(retriever_chain, question):
     try:
-        response = retriever_chain.invoke({"input": question})
+        # Construa o contexto das conversas anteriores
+        context = build_context_from_history()
+        prompt_with_context = f"Contexto:\n{context}\nPergunta atual: {question}"
+
+        response = retriever_chain.invoke({"input": prompt_with_context})
 
         if 'answer' in response:
-            return response['answer']
+            answer = response['answer']
+            # Armazena a pergunta e a resposta no histórico
+            conversation_history.append({"question": question, "answer": answer})
+            return answer
         else:
             logger.warning("Nenhuma resposta encontrada ou 'answer' não presente na resposta.")
             return "Nenhuma resposta encontrada."
@@ -98,6 +117,7 @@ def ask(request: QuestionRequest):
     answer = ask_question(retriever_chain, question)
     
     return {"question": question, "answer": answer}
+
 
 if __name__ == "__main__":
     import uvicorn
