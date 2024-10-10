@@ -77,7 +77,11 @@ def dataset_to_vector(dataset_name, use_saved_embeddings=False):
                 seen_texts.add(chunk.page_content)
                 unique_chunks.append(chunk)
 
-        embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+        embeddings = GoogleGenerativeAIEmbeddings(
+            model="models/embedding-001", 
+            temperature=0.4
+            )
+        
         vectorstore = FAISS.from_documents(unique_chunks, embeddings)
         retriever = vectorstore.as_retriever(search_kwargs={"k": 100})
         print("Retriever FAISS criado com sucesso.")    
