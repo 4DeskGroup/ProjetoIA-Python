@@ -118,6 +118,11 @@ def ask(request: QuestionRequest):
     
     return {"question": question, "answer": answer}
 
+# Rota para limpar o histórico
+@app.put("/clear")
+def clear_history():
+    conversation_history.clear()
+    return{"Success": True}
 
 if __name__ == "__main__":
     import uvicorn
