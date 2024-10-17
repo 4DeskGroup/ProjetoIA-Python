@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import nltk
 from pydantic import BaseModel
 from langchain.prompts import ChatPromptTemplate
 from langchain.chains.combine_documents import create_stuff_documents_chain
@@ -8,6 +9,9 @@ from vector import dataset_to_vector
 from langchain_google_genai import GoogleGenerativeAI
 import logging
 from dotenv import load_dotenv
+from nltk.sentiment import SentimentIntensityAnalyzer
+
+nltk.download('vader_lexicon')
 
 # Configuração do logging
 logging.basicConfig(level=logging.INFO)
@@ -100,6 +104,12 @@ def ask_question(retriever_chain, question):
             answer = response['answer']
             # Armazena a pergunta e a resposta no histórico
             conversation_history.append({"question": question, "answer": answer})
+
+            sia = SentimentIntensityAnalyzer()
+            sentiment_score = sia.polarity_scores(answer)
+        
+            logger.info(f"Sentiment Score: {sentiment_score}")
+
             return answer
         else:
             logger.warning("Nenhuma resposta encontrada ou 'answer' não presente na resposta.")
@@ -118,13 +128,6 @@ def ask(request: QuestionRequest):
     answer = ask_question(retriever_chain, question)
     
     return {"question": question, "answer": answer}
-
-# Rota para limpar o histórico
-@app.put("/clear")
-def clear_history():
-    conversation_history.clear()
-    return{"Success": True}
-
 
 if __name__ == "__main__":
     import uvicorn
