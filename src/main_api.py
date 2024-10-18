@@ -47,7 +47,8 @@ def create_specific_prompt(context_type, question_type):
     Pergunta ({question_type}):
     {{input}}
     
-    Para responder de forma precisa, considere as reviews e detalhes fornecidos. Inclua recomendações baseadas nas características do produto e nas preferências do usuário.
+    Para responder de forma precisa, considere as reviews e detalhes fornecidos. Inclua recomendações baseadas nas características do produto e nas 
+    preferências do usuário, e também baseie sua resposta no histórico gerado das perguntas anteriores, considerando padrões de comportamento e preferências ao longo do tempo.
     """
     return ChatPromptTemplate.from_template(template)
 
