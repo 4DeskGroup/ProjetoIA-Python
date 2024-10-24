@@ -32,7 +32,7 @@ class QuestionRequest(BaseModel):
 
 # Baixar recursos do NLTK
 nltk.download('vader_lexicon')
-nltk.download('punkt')
+nltk.download('punkt_tab')
 
 # Inicializando o SentimentIntensityAnalyzer
 sia = SentimentIntensityAnalyzer()
