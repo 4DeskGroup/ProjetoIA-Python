@@ -8,6 +8,9 @@ from vector import dataset_to_vector
 from langchain_google_genai import GoogleGenerativeAI
 import logging
 from dotenv import load_dotenv
+import nltk
+from nltk.sentiment import SentimentIntensityAnalyzer
+from nltk.tokenize import sent_tokenize
 
 # Configuração do logging
 logging.basicConfig(level=logging.INFO)
@@ -26,6 +29,37 @@ app.add_middleware(
 
 class QuestionRequest(BaseModel):
     question: str
+
+# Baixar recursos do NLTK
+nltk.download('vader_lexicon')
+nltk.download('punkt')
+
+# Inicializando o SentimentIntensityAnalyzer
+sia = SentimentIntensityAnalyzer()
+
+def load_sentiment_dictionary(file_path):
+    sentiment_dict = {}
+    with open(file_path, 'r', encoding='utf-8') as file:
+        for line in file:
+            word, score = line.strip().split('\t')
+            sentiment_dict[word] = int(score)
+    return sentiment_dict
+
+sentiment_dict = load_sentiment_dictionary('dados_sentimentos.txt')
+
+def analyze_review_with_custom_dict(review, sentiment_dict):
+    words = review.split()
+    sentiment_score = 0
+    for word in words:
+        sentiment_score += sentiment_dict.get(word.lower(), 0)  # Palavra convertida para lowercase
+    
+    if sentiment_score > 5:
+        return "Positivo", sentiment_score
+    elif sentiment_score < -5:
+        return "Negativo", sentiment_score
+    else:
+        return "Neutro", sentiment_score
+
 
 def create_dynamic_prompt(context_type, question_type):
     template = f"""
@@ -87,6 +121,22 @@ def build_context_from_history():
         context += f"Resposta: {entry['answer']}\n"
     return context
 
+# Função para análise de sentimento em textos longos
+def analyze_long_text(text):
+    sentences = sent_tokenize(text)
+    total_score = 0
+
+    for sentence in sentences:
+        _, score = analyze_review_with_custom_dict(sentence, sentiment_dict)
+        total_score += score
+
+    if total_score > 5:
+        return {"Positiva": total_score}
+    elif total_score < -5:
+        return {"Negativa": total_score}
+    else:
+        return {"Neutra": total_score}
+
 # Função que ajusta o retriever chain e inclui o contexto das respostas anteriores
 def ask_question(retriever_chain, question):
     try:
@@ -94,37 +144,50 @@ def ask_question(retriever_chain, question):
         context = build_context_from_history()
         prompt_with_context = f"Contexto:\n{context}\nPergunta atual: {question}"
 
+        # Recebe a resposta do retriever_chain
         response = retriever_chain.invoke({"input": prompt_with_context})
 
         if 'answer' in response:
             answer = response['answer']
+
             # Armazena a pergunta e a resposta no histórico
             conversation_history.append({"question": question, "answer": answer})
-            return answer
+
+            # Realiza a análise de sentimento da resposta usando a função para textos longos
+            sentiment_analysis = analyze_long_text(answer)
+            logger.info(f"Análise de sentimento: {sentiment_analysis}")
+
+            return {
+                "answer": answer,
+                "sentiment_analysis": sentiment_analysis
+            }
         else:
             logger.warning("Nenhuma resposta encontrada ou 'answer' não presente na resposta.")
-            return "Nenhuma resposta encontrada."
+            return {"answer": "Nenhuma resposta encontrada."}
     except Exception as e:
         logger.error(f"Erro ao tentar responder à pergunta: {e}", exc_info=True)
-        return "Erro ao processar a pergunta."
+        return {"answer": "Erro ao processar a pergunta."}
 
-# Rota principal da API que recebe a pergunta e retorna a resposta
+# Rota principal da API que recebe a pergunta e retorna a resposta com a análise de sentimento
 @app.post("/ask/")
 def ask(request: QuestionRequest):
     if not retriever_chain:
         return {"error": "O sistema não foi inicializado corretamente."}
 
     question = request.question
-    answer = ask_question(retriever_chain, question)
+    result = ask_question(retriever_chain, question)
     
-    return {"question": question, "answer": answer}
+    return {
+        "question": question,
+        "answer": result["answer"],
+        "sentiment_analysis": result["sentiment_analysis"]
+    }
 
-# Rota para limpar o histórico
+# Rota para limpar o histórico (sem modificar o histórico anterior)
 @app.put("/clear")
 def clear_history():
     conversation_history.clear()
-    return{"Success": True}
-
+    return {"Success": True}
 
 if __name__ == "__main__":
     import uvicorn
