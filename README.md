@@ -30,6 +30,16 @@ pip install -r requirements.txt
 ```
 python main.py | main_memory.py
 ```
+#### Para instalação API
+```
+pip install fastapi
+pip install uvicorn
+```
+#### Para executar API
+```
+uvicorn main:app --reload | uvicorn main_api:app --reload 
+```
+
 <div name="tecnologias"></div> 
 
 # 🛠️ Tecnologias
