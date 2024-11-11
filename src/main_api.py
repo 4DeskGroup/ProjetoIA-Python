@@ -32,7 +32,7 @@ class QuestionRequest(BaseModel):
 
 # Baixar recursos do NLTK
 nltk.download('vader_lexicon')
-nltk.download('punkt_tab')
+nltk.download('punkt')
 
 # Inicializando o SentimentIntensityAnalyzer
 sia = SentimentIntensityAnalyzer()
@@ -60,7 +60,6 @@ def analyze_review_with_custom_dict(review, sentiment_dict):
     else:
         return "Neutro", sentiment_score
 
-
 def create_dynamic_prompt(context_type, question_type):
     template = f"""
     Contexto: {{context}}
@@ -82,7 +81,7 @@ def create_specific_prompt(context_type, question_type):
     {{input}}
     
     Para responder de forma precisa, considere as reviews e detalhes fornecidos. Inclua recomendações baseadas nas características do produto e nas 
-    preferências do usuário, e também baseie sua resposta no histórico gerado das perguntas anteriores, considerando padrões de comportamento e preferências ao longo do tempo.
+    preferências do usuário.
     """
     return ChatPromptTemplate.from_template(template)
 
@@ -110,17 +109,6 @@ def initialize_retrieval_chain():
 
 retriever_chain = initialize_retrieval_chain()
 
-# Lista para armazenar o histórico de perguntas e respostas
-conversation_history = []
-
-# Função para construir o contexto a partir do histórico de conversas
-def build_context_from_history():
-    context = ""
-    for entry in conversation_history:
-        context += f"Pergunta: {entry['question']}\n"
-        context += f"Resposta: {entry['answer']}\n"
-    return context
-
 # Função para análise de sentimento em textos longos
 def analyze_long_text(text):
     sentences = sent_tokenize(text)
@@ -137,21 +125,14 @@ def analyze_long_text(text):
     else:
         return {"Neutra": total_score}
 
-# Função que ajusta o retriever chain e inclui o contexto das respostas anteriores
+# Função que ajusta o retriever chain e responde a pergunta
 def ask_question(retriever_chain, question):
     try:
-        # Construa o contexto das conversas anteriores
-        context = build_context_from_history()
-        prompt_with_context = f"Contexto:\n{context}\nPergunta atual: {question}"
-
         # Recebe a resposta do retriever_chain
-        response = retriever_chain.invoke({"input": prompt_with_context})
+        response = retriever_chain.invoke({"input": question})
 
         if 'answer' in response:
             answer = response['answer']
-
-            # Armazena a pergunta e a resposta no histórico
-            conversation_history.append({"question": question, "answer": answer})
 
             # Realiza a análise de sentimento da resposta usando a função para textos longos
             sentiment_analysis = analyze_long_text(answer)
@@ -182,12 +163,6 @@ def ask(request: QuestionRequest):
         "answer": result["answer"],
         "sentiment_analysis": result["sentiment_analysis"]
     }
-
-# Rota para limpar o histórico (sem modificar o histórico anterior)
-@app.put("/clear")
-def clear_history():
-    conversation_history.clear()
-    return {"Success": True}
 
 if __name__ == "__main__":
     import uvicorn
