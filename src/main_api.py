@@ -11,7 +11,6 @@ from dotenv import load_dotenv
 import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer
 from nltk.tokenize import sent_tokenize
-from typing import List, Dict
 
 # Configuração do logging
 logging.basicConfig(level=logging.INFO)
@@ -33,13 +32,10 @@ class QuestionRequest(BaseModel):
 
 # Baixar recursos do NLTK
 nltk.download('vader_lexicon')
-nltk.download('punkt')
+nltk.download('punkt_tab')
 
 # Inicializando o SentimentIntensityAnalyzer
 sia = SentimentIntensityAnalyzer()
-
-# Histórico de perguntas e respostas
-history: List[Dict[str, str]] = []
 
 def load_sentiment_dictionary(file_path):
     sentiment_dict = {}
@@ -129,33 +125,25 @@ def analyze_long_text(text):
     else:
         return {"Neutra": total_score}
 
-# Função que ajusta o retriever chain e responde a pergunta, considerando o histórico
+chat_history = []
+# Função que ajusta o retriever chain e responde a pergunta
 def ask_question(retriever_chain, question):
     try:
-        # Verifica se a nova pergunta está relacionada com a anterior
-        related_context = None
-        if history:
-            last_question = history[-1]["question"]
-            # Aqui fazemos uma verificação simples de relação entre as perguntas
-            # Em casos reais, pode ser necessário um cálculo mais avançado de similaridade
-            if any(keyword in question.lower() for keyword in last_question.lower().split()):
-                related_context = history[-1]["answer"]
-
-        # Inclui o contexto relacionado na pergunta, se existir
-        full_question = question if related_context is None else f"{related_context} {question}"
-        
         # Recebe a resposta do retriever_chain
-        response = retriever_chain.invoke({"input": full_question})
+        response = retriever_chain.invoke({"input": question})
 
         if 'answer' in response:
             answer = response['answer']
 
-            # Salva a pergunta e resposta no histórico
-            history.append({"question": question, "answer": answer})
-
             # Realiza a análise de sentimento da resposta usando a função para textos longos
             sentiment_analysis = analyze_long_text(answer)
             logger.info(f"Análise de sentimento: {sentiment_analysis}")
+
+            # Adiciona a interação ao histórico
+            chat_history.append({
+                "question": question,
+                "answer": answer
+            })
 
             return {
                 "answer": answer,
@@ -182,6 +170,12 @@ def ask(request: QuestionRequest):
         "answer": result["answer"],
         "sentiment_analysis": result["sentiment_analysis"]
     }
+
+# Rota para limpar o histórico
+@app.put("/clear")
+def clear_history():
+    chat_history.clear()
+    return {"Success": True}
 
 if __name__ == "__main__":
     import uvicorn
