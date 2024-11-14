@@ -81,7 +81,7 @@ def create_specific_prompt(context_type, question_type):
     {{input}}
     
     Para responder de forma precisa, considere as reviews e detalhes fornecidos. Inclua recomendações baseadas nas características do produto e nas 
-    preferências do usuário.
+    preferências do usuário. Caso exista um histórico de interações, utilize-o somente se a pergunta atual tiver relação com respostas anteriores, considerando padrões de comportamento e preferências ao longo do tempo.
     """
     return ChatPromptTemplate.from_template(template)
 
