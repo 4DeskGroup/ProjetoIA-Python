@@ -141,6 +141,22 @@ def analyze_long_text(text):
     else:
         return {"Neutra": total_score}
 
+def compare_responses(historical_response, database_response):
+    """
+    Compara a resposta gerada a partir do histórico com a resposta diretamente da base de dados.
+
+    :param historical_response: Resposta gerada usando o histórico.
+    :param database_response: Resposta gerada diretamente da base de dados.
+    :return: Um dicionário com os resultados da comparação.
+    """
+    from difflib import SequenceMatcher
+
+    similarity = SequenceMatcher(None, historical_response, database_response).ratio()
+    return {
+        "similarity": similarity,
+        "match": similarity > 0.8  # Define o threshold de confiabilidade
+    }
+
 # Função que ajusta o retriever chain e inclui o contexto das respostas anteriores
 def ask_question(retriever_chain, question):
     try:
@@ -150,6 +166,15 @@ def ask_question(retriever_chain, question):
 
         # Recebe a resposta do retriever_chain
         response = retriever_chain.invoke({"input": prompt_with_context})
+
+        # Resposta baseada no histórico
+        historical_response = retriever_chain.invoke({"input": prompt_with_context}).get('answer', '')
+
+        # Resposta diretamente da base de dados (sem contexto histórico)
+        database_response = retriever_chain.invoke({"input": question}).get('answer', '')
+
+        # Comparar as respostas
+        comparison_result = compare_responses(historical_response, database_response)
 
         if 'answer' in response:
             answer = response['answer']
@@ -163,7 +188,8 @@ def ask_question(retriever_chain, question):
 
             return {
                 "answer": answer,
-                "sentiment_analysis": sentiment_analysis
+                "sentiment_analysis": sentiment_analysis,
+                "comparison": comparison_result
             }
         else:
             logger.warning("Nenhuma resposta encontrada ou 'answer' não presente na resposta.")
@@ -184,7 +210,8 @@ def ask(request: QuestionRequest):
     return {
         "question": question,
         "answer": result["answer"],
-        "sentiment_analysis": result["sentiment_analysis"]
+        "sentiment_analysis": result["sentiment_analysis"],
+        "comparison": result["comparison"]
     }
 
 # Rota para limpar o histórico (sem modificar o histórico anterior)
