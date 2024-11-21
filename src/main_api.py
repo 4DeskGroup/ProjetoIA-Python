@@ -11,6 +11,7 @@ from dotenv import load_dotenv
 import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer
 from nltk.tokenize import sent_tokenize
+from difflib import SequenceMatcher
 
 # Configuração do logging
 logging.basicConfig(level=logging.INFO)
@@ -21,7 +22,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Altere para os domínios permitidos
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -32,7 +33,7 @@ class QuestionRequest(BaseModel):
 
 # Baixar recursos do NLTK
 nltk.download('vader_lexicon')
-nltk.download('punkt')
+nltk.download('punkt_tab')
 
 # Inicializando o SentimentIntensityAnalyzer
 sia = SentimentIntensityAnalyzer()
@@ -125,22 +126,54 @@ def analyze_long_text(text):
     else:
         return {"Neutra": total_score}
 
+chat_history = []
+
+# Função para comparar similaridade entre respostas
+def compare_with_history(question, new_answer):
+    similar_entry = None
+    highest_similarity = 0.0
+
+    for entry in chat_history:
+        previous_answer = entry["answer"]
+        similarity = SequenceMatcher(None, previous_answer, new_answer).ratio()
+        
+        if similarity > highest_similarity:
+            highest_similarity = similarity
+            similar_entry = entry
+
+    return similar_entry, highest_similarity
+
 # Função que ajusta o retriever chain e responde a pergunta
 def ask_question(retriever_chain, question):
     try:
-        # Recebe a resposta do retriever_chain
         response = retriever_chain.invoke({"input": question})
 
         if 'answer' in response:
             answer = response['answer']
 
-            # Realiza a análise de sentimento da resposta usando a função para textos longos
+            # Comparação com histórico
+            similar_entry, similarity = compare_with_history(question, answer)
+            if similar_entry and similarity > 0.8:  # Definindo um limiar de 80% de similaridade
+                logger.info(f"Resposta similar encontrada no histórico com {similarity*100:.2f}% de similaridade.")
+                comparison_result = {
+                    "historical_answer": similar_entry["answer"],
+                    "similarity": similarity
+                }
+            else:
+                comparison_result = {"similarity": "Nenhuma resposta similar encontrada no histórico"}
+
             sentiment_analysis = analyze_long_text(answer)
             logger.info(f"Análise de sentimento: {sentiment_analysis}")
 
+            chat_history.append({
+                "question": question,
+                "answer": answer
+            })
+
             return {
                 "answer": answer,
-                "sentiment_analysis": sentiment_analysis
+                "sentiment_analysis": sentiment_analysis,
+                "comparison_result": comparison_result
             }
         else:
             logger.warning("Nenhuma resposta encontrada ou 'answer' não presente na resposta.")
@@ -149,7 +182,7 @@ def ask_question(retriever_chain, question):
         logger.error(f"Erro ao tentar responder à pergunta: {e}", exc_info=True)
         return {"answer": "Erro ao processar a pergunta."}
 
-# Rota principal da API que recebe a pergunta e retorna a resposta com a análise de sentimento
+# Rota principal da API
 @app.post("/ask/")
 def ask(request: QuestionRequest):
     if not retriever_chain:
@@ -161,8 +194,15 @@ def ask(request: QuestionRequest):
     return {
         "question": question,
         "answer": result["answer"],
-        "sentiment_analysis": result["sentiment_analysis"]
+        "sentiment_analysis": result["sentiment_analysis"],
+        "comparison_result": result["comparison_result"]
     }
+
+# Rota para limpar o histórico
+@app.put("/clear")
+def clear_history():
+    chat_history.clear()
+    return {"Success": True}
 
 if __name__ == "__main__":
     import uvicorn
