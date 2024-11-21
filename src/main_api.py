@@ -97,7 +97,7 @@ def initialize_retrieval_chain():
     logger.info("Configurando o prompt...")
     prompt = create_specific_prompt("Geral", "Pergunta sobre os dados do contexto")
     
-    llm = GoogleGenerativeAI(model="gemini-pro")
+    llm = GoogleGenerativeAI(model="gemini-pro", temperature=0.2)
     document_chain = create_stuff_documents_chain(llm, prompt=prompt)
 
     logger.info("Convertendo dataset para vetores...")
