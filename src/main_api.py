@@ -80,7 +80,11 @@ def create_specific_prompt(context_type, question_type):
     
     Pergunta ({question_type}):
     {{input}}
-    
+
+    Quando o usuário informar a área de trabalho, hobby, segmento de vida, local de trabalho ou profissão, recomende produtos que estejam alinhados com as necessidades dessa área de trabalho, hobby, segmento de vida, local de trabalho ou profissão
+
+    Se a pergunta tiver relação com a área de trabalho, hobby, segmento de vida, local de trabalho ou profissão, ao formular sua resposta, reforce recomendações que estejam alinhadas com as necessidades dessa área de trabalho, hobby, segmento de vida, local de trabalho ou profissão
+
     Para responder de forma precisa, considere as reviews e detalhes fornecidos. Inclua recomendações baseadas nas características do produto e nas 
     preferências do usuário. Caso exista um histórico de interações, utilize-o somente se a pergunta atual tiver relação com respostas anteriores, considerando padrões de comportamento e preferências ao longo do tempo.
     """
