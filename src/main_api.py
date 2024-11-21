@@ -11,7 +11,6 @@ from dotenv import load_dotenv
 import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer
 from nltk.tokenize import sent_tokenize
-from difflib import SequenceMatcher
 
 # Configuração do logging
 logging.basicConfig(level=logging.INFO)
@@ -22,7 +21,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # Altere para os domínios permitidos
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -61,6 +60,7 @@ def analyze_review_with_custom_dict(review, sentiment_dict):
     else:
         return "Neutro", sentiment_score
 
+
 def create_dynamic_prompt(context_type, question_type):
     template = f"""
     Contexto: {{context}}
@@ -93,7 +93,7 @@ def initialize_retrieval_chain():
     logger.info("Configurando o prompt...")
     prompt = create_specific_prompt("Geral", "Pergunta sobre os dados do contexto")
     
-    llm = GoogleGenerativeAI(model="gemini-pro", temperature=0.2)
+    llm = GoogleGenerativeAI(model="gemini-pro")
     document_chain = create_stuff_documents_chain(llm, prompt=prompt)
 
     logger.info("Convertendo dataset para vetores...")
@@ -109,6 +109,17 @@ def initialize_retrieval_chain():
     return retriever_chain
 
 retriever_chain = initialize_retrieval_chain()
+
+# Lista para armazenar o histórico de perguntas e respostas
+conversation_history = []
+
+# Função para construir o contexto a partir do histórico de conversas
+def build_context_from_history():
+    context = ""
+    for entry in conversation_history:
+        context += f"Pergunta: {entry['question']}\n"
+        context += f"Resposta: {entry['answer']}\n"
+    return context
 
 # Função para análise de sentimento em textos longos
 def analyze_long_text(text):
@@ -126,54 +137,29 @@ def analyze_long_text(text):
     else:
         return {"Neutra": total_score}
 
-chat_history = []
-
-# Função para comparar similaridade entre respostas
-def compare_with_history(question, new_answer):
-    similar_entry = None
-    highest_similarity = 0.0
-
-    for entry in chat_history:
-        previous_answer = entry["answer"]
-        similarity = SequenceMatcher(None, previous_answer, new_answer).ratio()
-        
-        if similarity > highest_similarity:
-            highest_similarity = similarity
-            similar_entry = entry
-
-    return similar_entry, highest_similarity
-
-# Função que ajusta o retriever chain e responde a pergunta
+# Função que ajusta o retriever chain e inclui o contexto das respostas anteriores
 def ask_question(retriever_chain, question):
     try:
-        response = retriever_chain.invoke({"input": question})
+        # Construa o contexto das conversas anteriores
+        context = build_context_from_history()
+        prompt_with_context = f"Contexto:\n{context}\nPergunta atual: {question}"
+
+        # Recebe a resposta do retriever_chain
+        response = retriever_chain.invoke({"input": prompt_with_context})
 
         if 'answer' in response:
             answer = response['answer']
 
-            # Comparação com histórico
-            similar_entry, similarity = compare_with_history(question, answer)
-            if similar_entry and similarity > 0.8:  # Definindo um limiar de 80% de similaridade
-                logger.info(f"Resposta similar encontrada no histórico com {similarity*100:.2f}% de similaridade.")
-                comparison_result = {
-                    "historical_answer": similar_entry["answer"],
-                    "similarity": similarity
-                }
-            else:
-                comparison_result = {"similarity": "Nenhuma resposta similar encontrada no histórico"}
+            # Armazena a pergunta e a resposta no histórico
+            conversation_history.append({"question": question, "answer": answer})
 
+            # Realiza a análise de sentimento da resposta usando a função para textos longos
             sentiment_analysis = analyze_long_text(answer)
             logger.info(f"Análise de sentimento: {sentiment_analysis}")
 
-            chat_history.append({
-                "question": question,
-                "answer": answer
-            })
-
             return {
                 "answer": answer,
-                "sentiment_analysis": sentiment_analysis,
-                "comparison_result": comparison_result
+                "sentiment_analysis": sentiment_analysis
             }
         else:
             logger.warning("Nenhuma resposta encontrada ou 'answer' não presente na resposta.")
@@ -182,7 +168,7 @@ def ask_question(retriever_chain, question):
         logger.error(f"Erro ao tentar responder à pergunta: {e}", exc_info=True)
         return {"answer": "Erro ao processar a pergunta."}
 
-# Rota principal da API
+# Rota principal da API que recebe a pergunta e retorna a resposta com a análise de sentimento
 @app.post("/ask/")
 def ask(request: QuestionRequest):
     if not retriever_chain:
@@ -194,14 +180,13 @@ def ask(request: QuestionRequest):
     return {
         "question": question,
         "answer": result["answer"],
-        "sentiment_analysis": result["sentiment_analysis"],
-        "comparison_result": result["comparison_result"]
+        "sentiment_analysis": result["sentiment_analysis"]
     }
 
-# Rota para limpar o histórico
+# Rota para limpar o histórico (sem modificar o histórico anterior)
 @app.put("/clear")
 def clear_history():
-    chat_history.clear()
+    conversation_history.clear()
     return {"Success": True}
 
 if __name__ == "__main__":
