@@ -32,7 +32,7 @@ class QuestionRequest(BaseModel):
 
 # Baixar recursos do NLTK
 nltk.download('vader_lexicon')
-nltk.download('punkt_tab')
+nltk.download('punkt')
 
 # Inicializando o SentimentIntensityAnalyzer
 sia = SentimentIntensityAnalyzer()
@@ -60,7 +60,6 @@ def analyze_review_with_custom_dict(review, sentiment_dict):
     else:
         return "Neutro", sentiment_score
 
-
 def create_dynamic_prompt(context_type, question_type):
     template = f"""
     Contexto: {{context}}
@@ -80,11 +79,7 @@ def create_specific_prompt(context_type, question_type):
     
     Pergunta ({question_type}):
     {{input}}
-
-    Quando o usuário informar a área de trabalho, hobby, segmento de vida, local de trabalho ou profissão, recomende produtos que estejam alinhados com as necessidades dessa área de trabalho, hobby, segmento de vida, local de trabalho ou profissão
-
-    Se a pergunta tiver relação com a área de trabalho, hobby, segmento de vida, local de trabalho ou profissão, ao formular sua resposta, reforce recomendações que estejam alinhadas com as necessidades dessa área de trabalho, hobby, segmento de vida, local de trabalho ou profissão
-
+    
     Para responder de forma precisa, considere as reviews e detalhes fornecidos. Inclua recomendações baseadas nas características do produto e nas 
     preferências do usuário. Caso exista um histórico de interações, utilize-o somente se a pergunta atual tiver relação com respostas anteriores, considerando padrões de comportamento e preferências ao longo do tempo.
     """
@@ -97,7 +92,7 @@ def initialize_retrieval_chain():
     logger.info("Configurando o prompt...")
     prompt = create_specific_prompt("Geral", "Pergunta sobre os dados do contexto")
     
-    llm = GoogleGenerativeAI(model="gemini-pro", temperature=0.2)
+    llm = GoogleGenerativeAI(model="gemini-pro")
     document_chain = create_stuff_documents_chain(llm, prompt=prompt)
 
     logger.info("Convertendo dataset para vetores...")
@@ -113,17 +108,6 @@ def initialize_retrieval_chain():
     return retriever_chain
 
 retriever_chain = initialize_retrieval_chain()
-
-# Lista para armazenar o histórico de perguntas e respostas
-conversation_history = []
-
-# Função para construir o contexto a partir do histórico de conversas
-def build_context_from_history():
-    context = ""
-    for entry in conversation_history:
-        context += f"Pergunta: {entry['question']}\n"
-        context += f"Resposta: {entry['answer']}\n"
-    return context
 
 # Função para análise de sentimento em textos longos
 def analyze_long_text(text):
@@ -141,46 +125,14 @@ def analyze_long_text(text):
     else:
         return {"Neutra": total_score}
 
-def compare_responses(historical_response, database_response):
-    """
-    Compara a resposta gerada a partir do histórico com a resposta diretamente da base de dados.
-
-    :param historical_response: Resposta gerada usando o histórico.
-    :param database_response: Resposta gerada diretamente da base de dados.
-    :return: Um dicionário com os resultados da comparação.
-    """
-    from difflib import SequenceMatcher
-
-    similarity = SequenceMatcher(None, historical_response, database_response).ratio()
-    return {
-        "similarity": similarity,
-        "match": similarity > 0.8  # Define o threshold de confiabilidade
-    }
-
-# Função que ajusta o retriever chain e inclui o contexto das respostas anteriores
+# Função que ajusta o retriever chain e responde a pergunta
 def ask_question(retriever_chain, question):
     try:
-        # Construa o contexto das conversas anteriores
-        context = build_context_from_history()
-        prompt_with_context = f"Contexto:\n{context}\nPergunta atual: {question}"
-
         # Recebe a resposta do retriever_chain
-        response = retriever_chain.invoke({"input": prompt_with_context})
-
-        # Resposta baseada no histórico
-        historical_response = retriever_chain.invoke({"input": prompt_with_context}).get('answer', '')
-
-        # Resposta diretamente da base de dados (sem contexto histórico)
-        database_response = retriever_chain.invoke({"input": question}).get('answer', '')
-
-        # Comparar as respostas
-        comparison_result = compare_responses(historical_response, database_response)
+        response = retriever_chain.invoke({"input": question})
 
         if 'answer' in response:
             answer = response['answer']
-
-            # Armazena a pergunta e a resposta no histórico
-            conversation_history.append({"question": question, "answer": answer})
 
             # Realiza a análise de sentimento da resposta usando a função para textos longos
             sentiment_analysis = analyze_long_text(answer)
@@ -188,8 +140,7 @@ def ask_question(retriever_chain, question):
 
             return {
                 "answer": answer,
-                "sentiment_analysis": sentiment_analysis,
-                "comparison": comparison_result
+                "sentiment_analysis": sentiment_analysis
             }
         else:
             logger.warning("Nenhuma resposta encontrada ou 'answer' não presente na resposta.")
@@ -210,15 +161,8 @@ def ask(request: QuestionRequest):
     return {
         "question": question,
         "answer": result["answer"],
-        "sentiment_analysis": result["sentiment_analysis"],
-        "comparison": result["comparison"]
+        "sentiment_analysis": result["sentiment_analysis"]
     }
-
-# Rota para limpar o histórico (sem modificar o histórico anterior)
-@app.put("/clear")
-def clear_history():
-    conversation_history.clear()
-    return {"Success": True}
 
 if __name__ == "__main__":
     import uvicorn
