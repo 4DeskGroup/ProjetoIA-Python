@@ -1,0 +1,7 @@
+{
+  "question": "liste 5 produtos para uma sala de estar",
+  "answer": "1. **Conjunto Sala Jantar Mesa Andréia 4 Cadeiras Milena Cimol Savanasuede Bege:** Conjunto completo de sala de jantar com mesa e cadeiras de design moderno e elegante.\n2. **Sofá 4 Lugares Connect Retrátil e Reclinável Suede Amassado Cinza Rifletti:** Sofá aconchegante e funcional com assentos retráteis e reclináveis, perfeito para relaxar e receber convidados.\n3. **Tapete Sala Peludo 200x240 Bege Marrom Macio Felpudo Luxo:** Tapete luxuoso e macio que adiciona conforto e estilo ao ambiente.\n4. **Espelho Iluminado Maquiagem Banheiro Closed Parede e Bancada Jm315:** Espelho elegante e prático com iluminação embutida, ideal para maquiagem e cuidados pessoais.\n5. **Almofada Bola Pelúcia Palmeiras:** Almofada decorativa e divertida que adiciona um toque de personalidade e conforto ao sofá ou poltrona.",
+  "sentiment_analysis": {
+    "Positiva": 15
+  }
+}

@@ -1,0 +1,375 @@
+******Eliézer******
+
+******semDataset.py******
+
+******0.4******
+
+1. Qual produto é recomendado para tomar um café?
+
+Não é possível retornar esse dado com base nos reviews.
+
+2. Qual produto é recomendado para fazer macarrão?
+
+Não é possível retornar esse dado com base nos reviews.
+
+3. Eu trabalho com computação, qual é uma boa opção para comprar para minha área de atuação?
+
+esposta gerada: **Produto:** Apple MacBook Pro 16 polegadas
+**Marca:** Apple
+**Categoria:** Laptop
+**Data de submissão do review:** 15 de fevereiro de 2023
+**Título do review:** "Excelente máquina para profissionais"
+**Avaliação geral:** 4,8/5
+**Recomendação:** Sim
+**Texto do review:** "Como profissional de computação, este MacBook Pro é uma ferramenta essencial para mim. Seu poderoso processador e tela deslumbrante tornam o trabalho em projetos complexos uma brisa. A duração da bateria também é impressionante, permitindo que eu trabalhe por horas sem me preocupar com a recarga."
+**Gênero e idade do revisor:** Masculino, 35 anos
+**Área de Atuação:** Engenharia de Software
+Digite sua Pergunta (ou 'SAIR' para encerrar):
+
+
+**Data de submissão do review:** 15 de fevereiro de 2023
+**Título do review:** "Excelente máquina para profissionais"
+**Avaliação geral:** 4,8/5
+**Recomendação:** Sim
+**Texto do review:** "Como profissional de computação, este MacBook Pro é uma ferramenta essencial para mim. Seu poderoso processador e tela deslumbrante tornam o trabalho em projetos complexos uma brisa. A duração da bateria também é impressionante, permitindo que eu trabalhe por horas sem me preocupar com a recarga."
+**Gênero e idade do revisor:** Masculino, 35 anos
+**Área de Atuação:** Engenharia de Software
+Digite sua Pergunta (ou 'SAIR' para encerrar):
+
+**Data de submissão do review:** 15 de fevereiro de 2023
+**Título do review:** "Excelente máquina para profissionais"
+**Avaliação geral:** 4,8/5
+**Recomendação:** Sim
+**Texto do review:** "Como profissional de computação, este MacBook Pro é uma ferramenta essencial para mim. Seu poderoso processador e tela deslumbrante tornam o trabalho em projetos complexos uma brisa. A duração da bateria também é impressionante, permitindo que eu trabalhe por horas sem me preocupar com a recarga."
+**Gênero e idade do revisor:** Masculino, 35 anos
+**Área de Atuação:** Engenharia de Software
+Digite sua Pergunta (ou 'SAIR' para encerrar):
+**Data de submissão do review:** 15 de fevereiro de 2023
+**Título do review:** "Excelente máquina para profissionais"
+**Avaliação geral:** 4,8/5
+**Recomendação:** Sim
+**Texto do review:** "Como profissional de computação, este MacBook Pro é uma ferramenta essencial para mim. Seu poderoso processador e tela deslumbrante tornam o trabalho em projetos complexos uma brisa. A duração da bateria também é impressionante, permitindo que eu trabalhe por horas sem me preocupar com a recarga."
+**Gênero e idade do revisor:** Masculino, 35 anos
+**Área de Atuação:** Engenharia de Software
+**Data de submissão do review:** 15 de fevereiro de 2023
+**Título do review:** "Excelente máquina para profissionais"
+**Avaliação geral:** 4,8/5
+**Recomendação:** Sim
+**Texto do review:** "Como profissional de computação, este MacBook Pro é uma ferramenta essencial para mim. Seu poderoso processador e tela deslumbrante tornam o trabalho em projetos complexos uma brisa. A duração da bateria também é impressionante, permitindo que eu trabalhe por horas sem me preocupar com a recarga."
+**Data de submissão do review:** 15 de fevereiro de 2023
+**Título do review:** "Excelente máquina para profissionais"
+**Avaliação geral:** 4,8/5
+**Recomendação:** Sim
+**Data de submissão do review:** 15 de fevereiro de 2023
+**Título do review:** "Excelente máquina para profissionais"
+**Data de submissão do review:** 15 de fevereiro de 2023
+**Data de submissão do review:** 15 de fevereiro de 2023
+**Título do review:** "Excelente máquina para profissionais"
+**Avaliação geral:** 4,8/5
+**Recomendação:** Sim
+**Texto do review:** "Como profissional de computação, este MacBook Pro é uma ferramenta essencial para mim. Seu poderoso processador e tela deslumbrante tornam o trabalho em projetos complexos uma brisa. A duração da bateria também é impressionante, permitindo que eu trabalhe por horas sem me preocupar com a recarga."
+**Gênero e idade do revisor:** Masculino, 35 anos
+**Área de Atuação:** Engenharia de Software
+
+4. Qual é a nota média dada para produtos da marca Asus?
+
+Não é possível retornar esse dado com base nos reviews.
+
+5. Quais são as categorias com a maior quantidade de reviews positivas e os produtos relacionados a elas?
+
+Não é possível retornar esse dado com base nos reviews.
+
+6. Com base em produtos que são copos, qual o principal motivo de serem ruins, de acordo com os compradores, quais são esses copos?
+
+Não é possível retornar esse dado com base nos reviews.
+
+7. Qual é o produto mais bem avaliado na categoria Utensílios Domésticos?
+
+Não é possível retornar esse dado com base nos reviews.
+
+8. Quais marcas têm maior número de reviews com nota máxima (nota igual a 5)? E quais são esses produtos?
+
+Não é possível retornar esse dado com base nos reviews.
+
+9. Quais produtos têm mais reclamações sobre qualidade?
+
+Não é possível retornar esse dado com base nos reviews.
+
+10. Quais produtos têm mais elogios sobre qualidade?
+
+Não é possível retornar esse dado com base nos reviews.
+
+******0.3******
+
+1. Qual produto é recomendado para tomar um café?
+
+Não é possível retornar esse dado com base nos reviews.
+
+2. Qual produto é recomendado para fazer macarrão?
+
+Não é possível retornar esse dado com base nos reviews.
+
+3. Eu trabalho com computação, qual é uma boa opção para comprar para minha área de atuação?
+
+Pergunta recebida: Eu trabalho com computação, qual é uma boa opção para comprar para minha área de atuação?
+Resposta gerada: **Review 1:**
+
+* Data de submissão: 15/02/2023
+* Nome do produto: Notebook Dell Inspiron 15 3000
+* Marca do produto: Dell
+* Categoria do produto: Notebooks
+* Título do review: "Excelente notebook para trabalho e estudos"
+* Avaliação geral: 4,5/5
+* Recomendação: Sim
+* Texto do review: "Este notebook é perfeito para minhas necessidades de trabalho e estudos. Ele é rápido, tem uma ótima tela e bateria de longa duração. Recomendo fortemente."
+* Gênero e idade do revisor: Não especificado
+* Área de Atuação: Não especificado
+
+**Review 2:**
+
+* Data de submissão: 05/03/2023
+* Nome do produto: MacBook Air M2
+* Marca do produto: Apple
+* Categoria do produto: Notebooks
+* Título do review: "O melhor notebook para profissionais"
+* Avaliação geral: 5/5
+* Recomendação: Sim
+* Texto do review: "Este MacBook Air é incrível. Ele é leve, poderoso e tem uma bateria que dura o dia todo. É o notebook perfeito para profissionais que precisam de um dispositivo confiável e portátil."
+* Gênero e idade do revisor: Não especificado
+* Área de Atuação: Não especificado
+
+**Com base nesses reviews, o MacBook Air M2 é uma excelente opção para profissionais que trabalham com computação.**
+
+4. Qual é a nota média dada para produtos da marca Asus?
+
+Não é possível retornar esse dado com base nos reviews.
+
+5. Quais são as categorias com a maior quantidade de reviews positivas e os produtos relacionados a elas?
+
+Não é possível retornar esse dado com base nos reviews.
+
+6. Com base em produtos que são copos, qual o principal motivo de serem ruins, de acordo com os compradores, quais são esses copos?
+
+Não é possível retornar esse dado com base nos reviews.
+
+7. Qual é o produto mais bem avaliado na categoria Utensílios Domésticos?
+
+Não é possível retornar esse dado com base nos reviews.
+
+8. Quais marcas têm maior número de reviews com nota máxima (nota igual a 5)? E quais são esses produtos?
+
+Não é possível retornar esse dado com base nos reviews.
+
+9. Quais produtos têm mais reclamações sobre qualidade?
+
+Não é possível retornar esse dado com base nos reviews.
+
+10. Quais produtos têm mais elogios sobre qualidade?
+
+Não é possível retornar esse dado com base nos reviews.
+
+******0.2******
+
+1. Qual produto é recomendado para tomar um café?
+
+Não é possível retornar esse dado com base nos reviews.
+
+2. Qual produto é recomendado para fazer macarrão?
+
+Não é possível retornar esse dado com base nos reviews.
+
+3. Eu trabalho com computação, qual é uma boa opção para comprar para minha área de atuação?
+
+Pergunta recebida: Eu trabalho com computação, qual é uma boa opção para comprar para minha área de atuação?
+Resposta gerada: **Review 1:**
+
+* Data de submissão: 15/03/2023
+* Nome do produto: Notebook Dell Inspiron 15 3000
+* Marca do produto: Dell
+* Categoria do produto: Notebooks
+* Título do review: "Excelente notebook para trabalho e estudos"
+* Avaliação geral: 4,5/5
+* Recomendação do revisor para amigos: Sim
+* Texto do review: "Este notebook é perfeito para minhas necessidades de trabalho e estudos. Ele é rápido, tem uma ótima tela e a bateria dura o dia todo. Também é muito leve e fácil de transportar."  
+* Gênero e idade do revisor: Não especificado
+* Área de Atuação: Não especificado
+* Categorias: Qualidade, Desempenho, Portabilidade
+* Qualidade: Boa
+* Reviews: Positivas
+
+**Review 2:**
+
+* Data de submissão: 05/02/2023
+* Nome do produto: MacBook Air M2
+* Marca do produto: Apple
+* Categoria do produto: Notebooks
+* Título do review: "O melhor notebook para profissionais criativos"
+* Avaliação geral: 5/5
+* Recomendação do revisor para amigos: Sim
+* Texto do review: "Este MacBook Air é incrível! Ele é super rápido, tem uma tela linda e a bateria dura para sempre. É perfeito para edição de vídeo, design gráfico e outras tarefas criativas."       
+* Gênero e idade do revisor: Não especificado
+* Área de Atuação: Design gráfico
+* Categorias: Desempenho, Tela, Bateria
+* Qualidade: Excelente
+* Reviews: Positivas
+
+**Conclusão:**
+
+Com base nesses reviews, tanto o Notebook Dell Inspiron 15 3000 quanto o MacBook Air M2 são opções sólidas para profissionais da área de computação. O Dell Inspiron é uma escolha mais acessível e oferece um bom equilíbrio entre desempenho e portabilidade. O MacBook Air M2 é mais caro, mas oferece desempenho superior e uma tela melhor. A escolha final dependerá de suas necessidades e orçamento específicos.
+
+4. Qual é a nota média dada para produtos da marca Asus?
+
+Não é possível retornar esse dado com base nos reviews.
+
+5. Quais são as categorias com a maior quantidade de reviews positivas e os produtos relacionados a elas?
+
+Não é possível retornar esse dado com base nos reviews.
+
+6. Com base em produtos que são copos, qual o principal motivo de serem ruins, de acordo com os compradores, quais são esses copos?
+
+Não é possível retornar esse dado com base nos reviews.
+
+7. Qual é o produto mais bem avaliado na categoria Utensílios Domésticos?
+
+Não é possível retornar esse dado com base nos reviews.
+
+8. Quais marcas têm maior número de reviews com nota máxima (nota igual a 5)? E quais são esses produtos?
+
+Não é possível retornar esse dado com base nos reviews.
+
+9. Quais produtos têm mais reclamações sobre qualidade?
+
+Não é possível retornar esse dado com base nos reviews.
+
+10. Quais produtos têm mais elogios sobre qualidade?
+
+Não é possível retornar esse dado com base nos reviews.
+
+******0.1******
+
+1. Qual produto é recomendado para tomar um café?
+
+Não é possível retornar esse dado com base nos reviews.
+
+2. Qual produto é recomendado para fazer macarrão?
+
+Não é possível retornar esse dado com base nos reviews.
+
+3. Eu trabalho com computação, qual é uma boa opção para comprar para minha área de atuação?
+
+Resposta gerada: **Produto:** Laptop Dell XPS 13
+
+**Categoria:** Laptops
+
+**Data de submissão do review:** 15 de março de 2023
+
+**Título do review:** "O melhor laptop para profissionais de computação"
+
+**Avaliação geral:** 4,8/5
+
+**Recomendação:** Sim
+
+**Texto do review:**
+
+"Como profissional de computação, preciso de um laptop poderoso e portátil. O Dell XPS 13 atende a todas as minhas necessidades. Ele é incrivelmente fino e leve, mas ainda assim oferece desempenho excepcional. A tela é nítida e brilhante, perfeita para trabalhar com gráficos e planilhas. A duração da bateria também é excelente, o que é essencial para mim quando estou em trânsito. No geral, o Dell XPS 13 é o melhor laptop que já usei para computação."
+
+**Gênero e idade do revisor:** Masculino, 35 anos
+
+**Área de Atuação:** Engenharia de Software
+
+**Qualidade:** Excelente
+
+**Recomendação:** Altamente recomendado para profissionais de computação que buscam um laptop poderoso e portátil.
+
+4. Qual é a nota média dada para produtos da marca Asus?
+
+Não é possível retornar esse dado com base nos reviews.
+
+5. Quais são as categorias com a maior quantidade de reviews positivas e os produtos relacionados a elas?
+
+Não é possível retornar esse dado com base nos reviews.
+
+6. Com base em produtos que são copos, qual o principal motivo de serem ruins, de acordo com os compradores, quais são esses copos?
+
+Não é possível retornar esse dado com base nos reviews.
+
+7. Qual é o produto mais bem avaliado na categoria Utensílios Domésticos?
+
+Não é possível retornar esse dado com base nos reviews.
+
+8. Quais marcas têm maior número de reviews com nota máxima (nota igual a 5)? E quais são esses produtos?
+
+Não é possível retornar esse dado com base nos reviews.
+
+9. Quais produtos têm mais reclamações sobre qualidade?
+
+Não é possível retornar esse dado com base nos reviews.
+
+10. Quais produtos têm mais elogios sobre qualidade?
+
+Não é possível retornar esse dado com base nos reviews.
+
+******0.0******
+
+1. Qual produto é recomendado para tomar um café?
+
+Não é possível retornar esse dado com base nos reviews.
+
+2. Qual produto é recomendado para fazer macarrão?
+
+Não é possível retornar esse dado com base nos reviews.
+
+3. Eu trabalho com computação, qual é uma boa opção para comprar para minha área de atuação?
+
+Pergunta recebida: Eu trabalho com computação, qual é uma boa opção para comprar para minha área de atuação?
+Resposta gerada: **Produto:** Laptop Dell XPS 13
+
+**Categoria:** Laptops
+
+**Data de submissão do review:** 15 de março de 2023
+
+**Título do review:** "O melhor laptop para profissionais"
+
+**Avaliação geral:** 4,8/5
+
+**Recomendação:** Sim
+
+**Texto do review:** "Como profissional de computação, eu precisava de um laptop poderoso e portátil. O Dell XPS 13 atendeu perfeitamente às minhas necessidades. Ele é incrivelmente fino e leve, mas ainda assim oferece desempenho excepcional. A tela é nítida e vibrante, perfeita para trabalhar com gráficos e planilhas. A duração da bateria também é excelente, o que é essencial para mim quando estou em trânsito. No geral, este é o melhor laptop que já usei para trabalho."
+
+**Gênero e idade do revisor:** Masculino, 35 anos
+
+**Área de Atuação:** Computação
+
+**Qualidade:** Excelente
+
+**Recomendação:** Altamente recomendado para profissionais de computação que buscam um laptop poderoso e portátil.
+
+4. Qual é a nota média dada para produtos da marca Asus?
+
+Não é possível retornar esse dado com base nos reviews.
+
+5. Quais são as categorias com a maior quantidade de reviews positivas e os produtos relacionados a elas?
+
+Não é possível retornar esse dado com base nos reviews.
+
+6. Com base em produtos que são copos, qual o principal motivo de serem ruins, de acordo com os compradores, quais são esses copos?
+
+Não é possível retornar esse dado com base nos reviews.
+
+7. Qual é o produto mais bem avaliado na categoria Utensílios Domésticos?
+
+Não é possível retornar esse dado com base nos reviews.
+
+8. Quais marcas têm maior número de reviews com nota máxima (nota igual a 5)? E quais são esses produtos?
+
+Não é possível retornar esse dado com base nos reviews.
+
+9. Quais produtos têm mais reclamações sobre qualidade?
+
+Não é possível retornar esse dado com base nos reviews.
+
+10. Quais produtos têm mais elogios sobre qualidade?
+
+Não é possível retornar esse dado com base nos reviews.
+
+

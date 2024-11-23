@@ -1,0 +1,1202 @@
+Temperature Reviews sem histórico
+
+********temperature 0.4******
+
+1 - Qual produto é recomendado para tomar um café?
+
+Com Review: 
+
+Resposta: **Cafeteira Elétrica Cadence Single CAF114 2 Xícaras Amarelo**
+
+Esta cafeteira é altamente recomendada para tomar café, com avaliações positivas de usuários que destacam sua praticidade e eficiência. Ela é compacta, ideal para preparar pequenas quantidades de café, e possui um design moderno e elegante. Além disso, é fácil de usar e limpar, tornando-a uma ótima opção para quem busca praticidade e qualidade.
+
+2 - Qual produto é recomendado para fazer macarrão?
+
+Com Review: 
+
+Resposta: Máquina Macarrão Atlas 150 Marcato
+
+(Dado existente no dataset)
+
+3 - Eu trabalho com computação, qual é uma boa opção para comprar para minha área de atuação?
+
+Com Review:
+
+Resposta: **Notebook Asus Z550SAXX002 T Intel Celeron Quad Core 4 GB 500 GB Tela LED 156 Windows 10   Branco**
+
+* **Avaliação:** 5 estrelas
+* **Características:** Processador Intel Celeron Quad Core, 4 GB de RAM, 500 GB de armazenamento, tela LED de 15,6 polegadas, Windows 10    
+* **Recomendação:** Este notebook é uma boa opção para usuários que buscam um dispositivo básico e acessível para tarefas de computação geral, como processamento de texto, navegação na web e e-mail.
+
+**Notebook Lenovo Ideapad 320 Intel ® Core i57200u 8 GB 1 TB Tela 156 Windows 10   prata**
+
+* **Avaliação:** 5 estrelas
+* **Características:** Processador Intel Core i5, 8 GB de RAM, 1 TB de armazenamento, tela de 15,6 polegadas, Windows 10
+* **Recomendação:** Este notebook é uma boa escolha para usuários que precisam de um dispositivo mais potente para tarefas de computação mais exigentes, como edição de vídeo e jogos leves.
+
+**PC Gamer Rawar RW254PAZ INTEL I5 7400 8 GB Geforce GTX1060 6 GB 1 TB**
+
+* **Avaliação:** 5 estrelas
+* **Características:** Processador Intel i5, 8 GB de RAM, placa de vídeo Geforce GTX1060, 1 TB de armazenamento
+* **Recomendação:** Este PC gamer é uma ótima opção para usuários que buscam um dispositivo de alto desempenho para jogos e outras tarefas gráficas intensivas.
+
+4 - Qual é a nota média dada para produtos da marca Asus?
+
+Com Review:
+
+Resposta: A partir dos dados fornecidos, não é possível calcular a nota média dada para produtos da marca Asus, pois nem todos os produtos possuem avaliações.
+
+5 - Quais são as categorias com a maior quantidade de reviews positivas e os produtos relacionados à elas? (Pega focando quais categorias tem mais notas 4 para cima, não que seja o melhor, pois varia com ambiguidade)
+
+Com Review:
+
+Resposta: **Categoria com maior quantidade de reviews positivas:** Livros
+
+**Produtos relacionados com reviews positivas:**
+
+* Livro Vidas Boas
+* Livro Mulher Confiante
+* Livro Redescobrindo Beleza
+* Livro Investigador Sótãos
+* Livro Diário Amor Inteligente
+* Livro 1000 Lugares Conhecer Antes Morrer
+* Livro Arte Cinema Introdução
+* Livro Padres Amanhã
+* Livro Box Perdida
+
+6 - Com base em produtos que são copos, quais o principal motivo de serem ruins, de acordo com os compradores, quais são esses copos? (algumas variações inventadas)
+
+Com Review:
+
+* **Frete alto:** Vários compradores reclamaram do frete abusivo.
+* **Preço elevado:** Alguns compradores consideraram o preço dos copos muito alto.
+* **Qualidade ruim:** Um comprador relatou que o copo era "poder pegadinhar".
+* **Avaliações falsas:** Um comprador afirmou que a avaliação era falsa.
+* **Sentimento negativo:** Um comprador expressou um sentimento negativo em relação ao produto, chamando-o de "CAR4LHOS M3RD4 F0D3NDO".
+
+7 - Qual é o produto mais bem avaliado na categoria Utensílios Domésticos? (Variação 7 4/5 e 7 1/2/3)
+
+Com Review:
+
+Resposta: Kit 06 Portas Condimento Tempero Inox Magnético Imã Geladeira
+
+8 - Quais marcas têm maior número de reviews com nota máxima (nota igual a 5)? E quais são esses produtos? (Correto com variações)
+
+Com Review:
+
+Resposta: **Marcas com maior número de reviews com nota máxima (5):**
+
+* **Tramontina** (2 produtos)
+    * Faqueiro Aço Inox Laguna 91 Peças
+    * Faqueiro Inox Búzios 72 Peças
+* **Rocie** (10 produtos)
+    * Copo Acrílico Canudo 500ml
+* **Santista** (1 produto)
+    * Cobre Leito King Luiza 2 Porta Travesseiros Percal 200 Fios Rosa
+
+9 - Quais produtos têm mais reclamações sobre qualidade?
+
+Com Review:
+
+Resposta: Os produtos com mais reclamações sobre qualidade são:
+
+* Pipoqueira Cadence Pop Branca
+* Eliminadora e Removedora Pontas Duplas Preto
+* Prancha Nano Titanium Escova Mágica Alisadora Cores Sortidas
+* Faqueiro Inox Búzios 72 Peças Tramontina
+* Acqua Posto Nig Brinquedos
+* Quarto Bebê Guarda Roupa E Cômoda Doce Sonho Qmovi Branco Rosa
+* Faqueiro Inox Tramontina Búzios 24 Peças
+* Purificador Água Polar Basic Natural Prata
+* Base Dermacol Embalagem 4 Gramas Fracionada Cor 223
+* Conjunto Panelas Teflon antiaderente 13 peças
+* Prancha Chapinha Nano Titanium 450 ° F
+
+10 - Quais produtos têm mais elogios sobre qualidade?
+
+Com Review:
+
+Resposta: **Produtos com mais elogios sobre qualidade:**
+
+* Faqueiro Aço Inox Laguna 91 Peças Tramontina
+* Faqueiro Inox Búzios 72 Peças Tramontina
+* Cobre Leito King Luiza 2 Porta Travesseiros Percal 200 Fios Rosa Santista
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Portacápsulas Giratório Cromado 32 Cápsulas
+* Felps Profissional Óleo Marula 50ml
+* Vinagre Maçã Orgânico 500 Ml 100 Natural
+* Kit Prancha Chapinha Nano Titanium 450 ° F e Modelador Cachos Nano Titanium
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Clean Whey Isolado Glanbia 900 g Cacau Belga
+* Copo Acrílico Canudo 500ml Rocie
+* Almofada Bola Pelúcia Palmeiras
+* Copo Acrílico Canudo 500ml Rocie
+* Brinquedo Bebe Galinha Pintadinha Livro Sonoro
+* Secador Cabelo Profissional Taiff Rs5 1900w Preto 127v
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+
+********temperature 0.3******
+
+1 - Qual produto é recomendado para tomar um café?
+
+Com Review: 
+
+Com base nas informações fornecidas, não é possível identificar qual produto é recomendado para tomar café.
+
+2 - Qual produto é recomendado para fazer macarrão?
+
+Com Review: 
+
+Resposta: Máquina Macarrão Atlas 150   Marcato
+
+(Dado existente no dataset)
+
+3 - Eu trabalho com computação, qual é uma boa opção para comprar para minha área de atuação?
+
+Com Review:
+
+Resposta: Com base nas avaliações e características dos produtos listados, as seguintes opções podem ser adequadas para sua área de atuação em computação:
+
+* **Computador Premium Dragon Intel Core G3260 8 gb Ddr3 Kingstongeforce Gt210 1gb1 tb 500w Realhdmi:** Este computador possui um processador Intel Core G3260, 8 GB de RAM DDR3 e uma placa gráfica GeForce GT210. Ele recebeu uma avaliação de 3, indicando que é uma opção razoável para tarefas básicas de computação.
+
+* **Notebook Asus Z550SAXX002 T Intel Celeron Quad Core 4 GB 500 GB Tela LED 156 Windows 10   Branco:** Este notebook possui um processador Intel Celeron Quad Core, 4 GB de RAM e uma tela LED de 15,6 polegadas. Ele recebeu uma avaliação de 5, indicando que é uma boa opção para tarefas básicas de computação e mobilidade.
+
+* **Notebook Lenovo Ideapad 320 Intel ® Core i57200u 8 GB 1 TB Tela 156 Windows 10   prata:** Este notebook possui um processador Intel Core i5-7200U, 8 GB de RAM e uma tela de 15,6 polegadas. Ele recebeu uma avaliação de 5, indicando que é uma boa opção para tarefas de computação mais exigentes.
+
+* **Notebook Dell Inspiron i155566A30P Intel Core 7 i5 4 GB 1 TB Tela LED 156 Windows 10   Preto:** Este notebook possui um processador Intel Core i5, 4 GB de RAM e uma tela LED de 15,6 polegadas. Ele recebeu uma avaliação de 5, indicando que é uma boa opção para tarefas de computação mais exigentes e mobilidade.
+
+* **Notebook Acer A51551G58VH Intel Core I5 8 GB GeForce 940MX 2 GB 1 TB   Tela LED 156 Windows 10   Preto:** Este notebook possui um processador Intel Core i5, 8 GB de RAM, uma placa gráfica GeForce 940MX e uma tela LED de 15,6 polegadas. Ele recebeu uma avaliação de 5, indicando que é uma boa opção para tarefas de computação mais exigentes e jogos leves.
+
+A escolha final dependerá de suas necessidades e preferências específicas, como orçamento, requisitos de desempenho e portabilidade.   
+
+4 - Qual é a nota média dada para produtos da marca Asus?
+
+Com Review:
+
+A informação fornecida não contém dados sobre a nota média dada para produtos da marca Asus. Portanto, não é possível responder à pergunta com base nas informações fornecidas.
+
+5 - Quais são as categorias com a maior quantidade de reviews positivas e os produtos relacionados à elas? (Pega focando quais categorias tem mais notas 4 para cima, não que seja o melhor, pois varia com ambiguidade)
+
+Com Review:
+
+Resposta: **Categorias com a maior quantidade de reviews positivas:**
+
+* **Livros (12 reviews positivas)**
+* **Utilidades Domésticas (7 reviews positivas)**
+* **Beleza e Perfumaria (6 reviews positivas)**
+* **Brinquedos (5 reviews positivas)**
+
+**Produtos relacionados às categorias com a maior quantidade de reviews positivas:**
+
+* **Livros:**
+    * Vidas Boas
+    * Mulher Confiante
+    * Redescobrindo Beleza
+    * Investigador Sótãos
+    * Diário Amor Inteligente
+    * 1000 Lugares Conhecer Antes Morrer
+    * Arte Cinema Introdução
+    * Padres Amanhã
+    * Box Perdida
+* **Utilidades Domésticas:**
+    * Portacápsulas Giratório Cromado 32 Cápsulas
+    * Faqueiro Inox Búzios 72 Peças
+    * Máquina Macarrão Atlas 150
+    * Porta Tampinhas Moldura Mt P
+    * Faqueiro Aço Inox Laguna 91 Peças
+    * Copo Acrílico Canudo 500ml Rocie
+    * Lençol Elástico volta Toda Avulso Queen 170 Fios Pink
+* **Beleza e Perfumaria:**
+    * Modelador Cachos Preto
+    * Prancha Escova Removedora Pontas Duplas Fasiz Split Corte
+* **Brinquedos:**
+    * Brinquedo Bebe Galinha Pintadinha Livro Sonoro
+    * Boneca Brinquedo Maquiar Magic Top Model
+    * Perfil Junior Volume 2
+
+6 - Com base em produtos que são copos, quais o principal motivo de serem ruins, de acordo com os compradores, quais são esses copos? (algumas variações inventadas)
+
+Com Review:
+
+Resposta: **Principais motivos de avaliações ruins para copos:**
+
+* **Frete alto ou abusivo:** Vários compradores reclamaram de fretes caros ou excessivos, o que pode tornar o produto menos atraente.       
+* **Preço elevado:** Alguns compradores consideraram o preço dos copos muito alto, especialmente em comparação com produtos similares.      
+* **Qualidade duvidosa:** Alguns compradores relataram problemas com a qualidade dos copos, como materiais frágeis ou acabamento ruim.      
+* **Tamanho inadequado:** Um comprador reclamou que o copo era muito pequeno para seu uso pretendido.
+
+**Copos específicos com avaliações ruins:**
+
+* Copo Acrílico Canudo 500ml Rocie (avaliação 1): Frete alto.
+* Copo Acrílico Canudo 500ml Rocie (avaliação 1): Preço elevado.
+* Copo Acrílico Canudo 500ml Rocie (avaliação 1): Qualidade duvidosa.
+* Copo Acrílico Canudo 500ml Rocie (avaliação 1): Tamanho inadequado.
+
+**Recomendações:**
+
+Para evitar decepções, os compradores devem considerar os seguintes fatores ao escolher copos:
+
+* **Custo total:** Considere o preço do produto e o custo de envio.
+* **Qualidade:** Leia as avaliações de outros compradores para ter uma ideia da qualidade do produto.
+* **Tamanho:** Certifique-se de que o copo atende às suas necessidades de tamanho.
+* **Frete:** Procure produtos com frete razoável ou gratuito.
+
+7 - Qual é o produto mais bem avaliado na categoria Utensílios Domésticos? (Variação 7 4/5 e 7 1/2/3)
+
+Com Review:
+
+Resposta: Kit 06 Portas Condimento Tempero Inox Magnético Imã Geladeira
+
+8 - Quais marcas têm maior número de reviews com nota máxima (nota igual a 5)? E quais são esses produtos? (Correto com variações)
+
+Com Review:
+
+Resposta: **Marcas com maior número de reviews com nota máxima (5):**
+
+* **Tramontina:**
+    * Faqueiro Aço Inox Laguna 91 Peças
+    * Faqueiro Inox Búzios 72 Peças
+* **Rocie:**
+    * Copo Acrílico Canudo 500ml
+* **Santista:**
+    * Cobre Leito King Luiza 2 Porta Travesseiros Percal 200 Fios Rosa
+
+9 - Quais produtos têm mais reclamações sobre qualidade?
+
+Com Review:
+
+Resposta: Os produtos com mais reclamações sobre qualidade são:
+
+* Pipoqueira Cadence Pop Branca
+* Eliminadora e Removedora Pontas Duplas Preto
+* Prancha Nano Titanium Escova Mágica Alisadora Cores Sortidas
+* Faqueiro Inox Búzios 72 Peças Tramontina
+* Acqua Posto Nig Brinquedos
+* Quarto Bebê Guarda Roupa E Cômoda Doce Sonho Qmovi Branco Rosa
+* Faqueiro Inox Tramontina Búzios 24 Peças
+* Purificador Água Polar Basic Natural Prata
+* Base Dermacol Embalagem 4 Gramas Fracionada Cor 223
+* Conjunto Panelas Teflon antiaderente 13 peças
+* Prancha Chapinha Nano Titanium 450 ° F
+
+10 - Quais produtos têm mais elogios sobre qualidade? (Dados Existentes)
+
+Com Review:
+
+Resposta: **Produtos com mais elogios sobre qualidade:**
+
+* Faqueiro Aço Inox Laguna 91 Peças Tramontina
+* Faqueiro Inox Búzios 72 Peças Tramontina
+* Cobre Leito King Luiza 2 Porta Travesseiros Percal 200 Fios Rosa Santista
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Portacápsulas Giratório Cromado 32 Cápsulas
+* Felps Profissional Óleo Marula 50ml
+* Vinagre Maçã Orgânico 500 Ml 100 Natural
+* Kit Prancha Chapinha Nano Titanium 450 ° F e Modelador Cachos Nano Titanium
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Clean Whey Isolado Glanbia 900 g Cacau Belga
+* Depurador Ar Electrolux DE60Xr 4 boca Inox
+* Copo Acrílico Canudo 500ml Rocie
+* Almofada Bola Pelúcia Palmeiras
+* Copo Acrílico Canudo 500ml Rocie
+* Brinquedo Bebe Galinha Pintadinha Livro Sonoro
+* Secador Cabelo Profissional Taiff Rs5 1900w Preto 127v
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+
+
+********temperature 0.2******
+
+1 - Qual produto é recomendado para tomar um café?
+
+Com Review: 
+
+Resposta: **Cafeteira Elétrica Cadence Single CAF114 2 Xícaras Amarelo**
+
+* **Avaliação:** 5
+* **Recomendação para um amigo:** Sim
+* **Características:**
+    * Faz 2 xícaras de café
+    * Cor amarela
+* **Avaliações dos usuários:**
+    * "Bom"
+    * "Perfeito"
+
+2 - Qual produto é recomendado para fazer macarrão?
+
+Com Review: 
+
+Resposta: Máquina Macarrão Atlas 150   Marcato
+
+3 - Eu trabalho com computação, qual é uma boa opção para comprar para minha área de atuação?
+
+Com Review:
+
+Resposta: **Computador Premium Dragon Intel Core G3260 8 gb Ddr3 Kingstongeforce Gt210 1gb1 tb 500w Realhdmi**
+
+* **Avaliação:** 3
+* **Características:** Computador com processador Intel Core G3260, 8 GB de memória RAM DDR3, placa de vídeo GeForce GT210 com 1 GB de memória dedicada, HD de 1 TB e fonte de alimentação de 500W.
+* **Recomendação:** Esta opção pode ser adequada para tarefas básicas de computação, como processamento de texto, navegação na web e uso de aplicativos de escritório. No entanto, pode não ser ideal para tarefas mais exigentes, como edição de vídeo ou jogos.
+
+**Notebook Asus Z550SAXX002 T Intel Celeron Quad Core 4 GB 500 GB Tela LED 156 Windows 10   Branco**
+
+* **Avaliação:** 5
+* **Características:** Notebook com processador Intel Celeron Quad Core, 4 GB de memória RAM, HD de 500 GB, tela LED de 15,6 polegadas e sistema operacional Windows 10.
+* **Recomendação:** Este notebook é uma boa opção para tarefas básicas de computação, como processamento de texto, navegação na web e uso de aplicativos de escritório. Ele também pode ser usado para tarefas mais leves de edição de imagem e vídeo.
+
+**Notebook Lenovo Ideapad 320 Intel ® Core i57200u 8 GB 1 TB Tela 156 Windows 10   prata**
+
+* **Avaliação:** 5
+* **Características:** Notebook com processador Intel Core i5-7200U, 8 GB de memória RAM, HD de 1 TB, tela de 15,6 polegadas e sistema operacional Windows 10.
+* **Recomendação:** Este notebook é uma boa opção para tarefas mais exigentes, como edição de vídeo, jogos e programação. Ele oferece um bom equilíbrio entre desempenho e portabilidade.
+
+**Notebook Dell Inspiron i155566A30P Intel Core 7 i5 4 GB 1 TB Tela LED 156 Windows 10   Preto**
+
+* **Avaliação:** 5
+* **Características:** Notebook com processador Intel Core i5-7200U, 4 GB de memória RAM, HD de 1 TB, tela LED de 15,6 polegadas e sistema operacional Windows 10.
+* **Recomendação:** Este notebook é uma boa opção para tarefas mais exigentes, como edição de vídeo, jogos e programação. Ele oferece um bom equilíbrio entre desempenho e portabilidade.
+
+**Notebook Acer A51551G58VH Intel Core I5 8 GB GeForce 940MX 2 GB 1 TB   Tela LED 156 Windows 10   Preto**
+
+* **Avaliação:** 5
+* **Características:** Notebook com processador Intel Core i5-8250U, 8 GB de memória RAM, placa de vídeo GeForce 940MX com 2 GB de memória dedicada, HD de 1 TB, tela LED de 15,6 polegadas e sistema operacional Windows 10.
+* **Recomendação:** Este notebook é uma boa opção para tarefas mais exigentes, como edição de vídeo, jogos e programação. Ele oferece um bom equilíbrio entre desempenho e portabilidade.
+
+
+4 - Qual é a nota média dada para produtos da marca Asus?
+
+Com Review:
+
+A informação fornecida não contém dados sobre a nota média dada para produtos da marca Asus. Portanto, não é possível responder à pergunta com base no contexto fornecido.
+
+
+5 - Quais são as categorias com a maior quantidade de reviews positivas e os produtos relacionados à elas?
+
+Com Review:Resposta: **Categoria com a maior quantidade de reviews positivas:** Livros
+
+**Produtos relacionados à categoria com a maior quantidade de reviews positivas:**
+
+* Livro Vidas Boas
+* Livro Mulher Confiante
+* Livro Investigador Sótãos
+* Livro Diário Amor Inteligente
+* Livro 1000 Lugares Conhecer Antes Morrer
+* Livro Arte Cinema Introdução
+* Livro Padres Amanhã
+* Livro Box Perdida
+
+
+
+
+6 - Com base em produtos que são copos, quais o principal motivo de serem ruins, de acordo com os compradores, quais são esses copos?
+
+Com Review:
+
+Resposta: **Principais motivos de avaliações ruins para copos:**
+
+* **Frete caro ou abusivo:** Vários compradores reclamaram do alto custo do frete, o que torna o produto menos atraente.
+* **Qualidade questionável:** Alguns compradores relataram problemas com a qualidade dos copos, como pegadas difíceis de remover e materiais frágeis.
+* **Preço alto:** Alguns compradores consideraram o preço dos copos muito alto, especialmente em comparação com produtos similares.
+* **Entrega problemática:** Houve reclamações sobre problemas de entrega, como atrasos e produtos danificados.
+* **Informações falsas:** Um comprador relatou uma avaliação falsa, o que pode indicar problemas com a confiabilidade das informações do produto.
+
+**Copos específicos com avaliações ruins:**
+
+* Copo Acrílico Canudo 500ml Rocie (avaliação 1): Frete caro, qualidade questionável, preço alto.
+* Copo Acrílico Canudo 500ml Rocie (avaliação 1): Frete abusivo.
+* Copo Acrílico Canudo 500ml Rocie (avaliação 1): Poder de pegada, preço alto.
+* Copo Acrílico Canudo 500ml Rocie (avaliação 1): Frete caro.
+* Copo Acrílico Canudo 500ml Rocie (avaliação 1): Sentido de assalto, preço alto.
+
+
+7 - Qual é o produto mais bem avaliado na categoria Utensílios Domésticos?
+
+Com Review:
+
+Resposta: Kit 06 Portas Condimento Tempero Inox Magnético Imã Geladeira
+
+8 - Quais marcas têm maior número de reviews com nota máxima (nota igual a 5)? E quais são esses produtos? 
+
+Com Review:
+
+Resposta: **Marcas com maior número de reviews com nota máxima (5):**
+
+* **Tramontina:**
+    * Faqueiro Aço Inox Laguna 91 Peças
+    * Faqueiro Inox Búzios 72 Peças
+* **Rocie:**
+    * Copo Acrílico Canudo 500ml
+* **Santista:**
+    * Cobre Leito King Luiza 2 Porta Travesseiros Percal 200 Fios Rosa
+* **Gtech:**
+    * Bomba TiraLeite Materno Manual GTech Confort
+* **Felps Profissional:**
+    * Óleo Marula 50ml
+
+
+9 - Quais produtos têm mais reclamações sobre qualidade?
+
+Com Review:
+
+Resposta: Os produtos com mais reclamações sobre qualidade são:
+
+* Pipoqueira Cadence Pop Branca
+* Eliminadora e Removedora Pontas Duplas Preto
+* Prancha Nano Titanium Escova Mágica Alisadora Cores Sortidas
+* Faqueiro Inox Búzios 72 Peças Tramontina
+* Acqua Posto Nig Brinquedos
+* Quarto Bebê Guarda Roupa E Cômoda Doce Sonho Qmovi Branco Rosa
+* Faqueiro Inox Tramontina Búzios 24 Peças
+* Purificador Água Polar Basic Natural Prata
+* Base Dermacol Embalagem 4 Gramas Fracionada Cor 223
+* Conjunto Panelas Teflon antiaderente 13 peças
+* Prancha Chapinha Nano Titanium 450 ° F
+
+
+10 - Quais produtos têm mais elogios sobre qualidade? 
+
+Com Review:
+Resposta: Os produtos com mais elogios sobre qualidade são:
+
+* Faqueiro Aço Inox Laguna 91 Peças Tramontina
+* Faqueiro Inox Búzios 72 Peças Tramontina
+* Copo Acrílico Canudo 500ml Rocie
+* Portacápsulas Giratório Cromado 32 Cápsulas
+* Vinagre Maçã Orgânico 500 Ml 100 Natural
+* Kit Prancha Chapinha Nano Titanium 450 ° F e Modelador Cachos Nano Titanium
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo
+
+
+********temperature 0.1******
+
+1 - Qual produto é recomendado para tomar um café?
+
+Com Review: 
+
+Com base nas informações fornecidas, não é possível determinar qual produto é recomendado para tomar um café, pois o contexto não contém informações sobre as características ou preferências dos produtos em relação ao preparo de café.
+
+
+2 - Qual produto é recomendado para fazer macarrão?
+
+Com Review: 
+
+Resposta: Máquina Macarrão Atlas 150   Marcato
+
+3 - Eu trabalho com computação, qual é uma boa opção para comprar para minha área de atuação?
+
+Com Review:
+
+Resposta: **Computador Premium Dragon Intel Core G3260 8 gb Ddr3 Kingstongeforce Gt210 1gb1 tb 500w Realhdmi**
+
+* **Avaliação:** 3
+* **Características:** Computador com processador Intel Core G3260, 8 GB de memória RAM DDR3, placa de vídeo GeForce GT210 com 1 GB de memória dedicada, HD de 1 TB e fonte de alimentação de 500W.
+* **Recomendação:** Esta opção pode ser adequada para tarefas básicas de computação, como processamento de texto, navegação na web e uso de aplicativos de escritório. No entanto, pode não ser ideal para tarefas mais exigentes, como edição de vídeo ou jogos.
+
+**Notebook Asus Z550SAXX002 T Intel Celeron Quad Core 4 GB 500 GB Tela LED 156 Windows 10   Branco**
+
+* **Avaliação:** 5
+* **Características:** Notebook com processador Intel Celeron Quad Core, 4 GB de memória RAM, HD de 500 GB, tela LED de 15,6 polegadas e sistema operacional Windows 10.
+* **Recomendação:** Este notebook é uma boa opção para tarefas básicas de computação, como processamento de texto, navegação na web e uso de aplicativos de escritório. Também pode ser adequado para tarefas mais leves de edição de imagem ou vídeo.
+
+**PC Gamer Rawar RW254PAZ INTEL I5 7400 8 GB Geforce GTX1060 6 GB 1 TB**
+
+* **Avaliação:** 5
+* **Características:** Computador gamer com processador Intel Core i5 7400, 8 GB de memória RAM, placa de vídeo GeForce GTX1060 com 6 GB de memória dedicada, HD de 1 TB e sistema operacional Windows 10.
+* **Recomendação:** Esta opção é altamente recomendada para profissionais de computação que precisam de um computador potente para tarefas exigentes, como edição de vídeo, modelagem 3D ou jogos.
+
+**Notebook Lenovo Ideapad 320 Intel ® Core i57200u 8 GB 1 TB Tela 156 Windows 10   prata**
+
+* **Avaliação:** 5
+* **Características:** Notebook com processador Intel Core i5 7200u, 8 GB de memória RAM, HD de 1 TB, tela de 15,6 polegadas e sistema operacional Windows 10.
+* **Recomendação:** Este notebook é uma excelente opção para profissionais de computação que precisam de um dispositivo portátil e potente para tarefas como programação, desenvolvimento de software ou edição de vídeo.
+
+**Notebook Dell Inspiron i155566A30P Intel Core 7 i5 4 GB 1 TB Tela LED 156 Windows 10   Preto**
+
+* **Avaliação:** 5
+* **Características:** Notebook com processador Intel Core i5 7200u, 4 GB de memória RAM, HD de 1 TB, tela LED de 15,6 polegadas e sistema operacional Windows 10.
+* **Recomendação:** Este notebook é uma escolha premium para profissionais de computação que precisam de um dispositivo poderoso e confiável para tarefas exigentes.
+
+4 - Qual é a nota média dada para produtos da marca Asus?
+
+Com Review:
+
+Resposta: A informação fornecida não contém dados sobre a nota média dada para produtos da marca Asus. Portanto, não é possível responder à pergunta com base nas informações fornecidas.
+
+5 - Quais são as categorias com a maior quantidade de reviews positivas e os produtos relacionados à elas?
+
+Com Review:
+
+Resposta: **Categorias com a maior quantidade de reviews positivas:**
+
+* **Livros (11 reviews positivas)**
+* **Utilidades Domésticas (7 reviews positivas)**
+* **Beleza e Perfumaria (6 reviews positivas)**
+* **Brinquedos (5 reviews positivas)**
+* **Moda (2 reviews positivas)**
+
+**Produtos relacionados às categorias com a maior quantidade de reviews positivas:**
+
+**Livros:**
+* Livro Vidas Boas
+* Livro Mulher Confiante
+* Livro Investigador Sótãos
+* Livro Diário Amor Inteligente
+* Livro 1000 Lugares Conhecer Antes Morrer
+
+**Utilidades Domésticas:**
+* Portacápsulas Giratório Cromado 32 Cápsulas
+* Faqueiro Inox Búzios 72 Peças
+* Máquina Macarrão Atlas 150
+* Faqueiro Aço Inox Laguna 91 Peças
+* Copo Acrílico Canudo 500ml Rocie
+
+**Beleza e Perfumaria:**
+* Modelador Cachos Preto
+* Prancha Escova Removedora Pontas Duplas Fasiz Split Corte
+* Felps Profissional Óleo Marula 50ml
+
+**Brinquedos:**
+* Brinquedo Bebe Galinha Pintadinha Livro Sonoro
+* Boneca Brinquedo Maquiar Magic Top Model
+* Perfil Junior Volume 2
+
+**Moda:**
+* Tênis Casual Conforto Beira Rio
+* Mochila Mickey Preta
+
+
+6 - Com base em produtos que são copos, quais o principal motivo de serem ruins, de acordo com os compradores, quais são esses copos?
+
+Com Review:
+
+Resposta: **Principais motivos de avaliações ruins para copos:**
+
+* **Frete caro ou abusivo:** Vários compradores reclamaram do alto custo do frete, o que tornou o produto menos atraente.
+* **Preço elevado:** Alguns compradores consideraram o preço do copo muito alto, especialmente em comparação com produtos similares.        
+* **Qualidade questionável:** Alguns compradores relataram problemas com a qualidade do copo, como pegadinhas ou materiais frágeis.
+* **Avaliações falsas:** Uma avaliação mencionou que a avaliação positiva era falsa, o que pode indicar problemas com a confiabilidade das avaliações.
+
+7 - Qual é o produto mais bem avaliado na categoria Utensílios Domésticos?
+
+Com Review:
+
+Resposta: Kit 06 Portas Condimento Tempero Inox Magnético Imã Geladeira
+
+8 - Quais marcas têm maior número de reviews com nota máxima (nota igual a 5)? E quais são esses produtos? 
+
+Com Review:
+
+Resposta: **Marcas com maior número de reviews com nota máxima (5):**
+
+* **Rocie:** 16 reviews
+* **Tramontina:** 3 reviews
+* **Santista:** 1 review
+* **Gtech:** 1 review
+
+**Produtos com nota máxima (5) dessas marcas:**
+
+**Rocie:**
+* Copo Acrílico Canudo 500ml Rocie
+
+**Tramontina:**
+* Faqueiro Aço Inox Laguna 91 Peças
+* Faqueiro Inox Búzios 72 Peças
+
+**Santista:**
+* Cobre Leito King Luiza 2 Porta Travesseiros Percal 200 Fios Rosa
+
+**Gtech:**
+* bomba TiraLeite Materno Manual GTech Confort
+
+9 - Quais produtos têm mais reclamações sobre qualidade?
+
+Com Review:
+
+Os produtos com mais reclamações sobre qualidade são:
+
+* Pipoqueira Cadence Pop Branca
+* Eliminadora e Removedora Pontas Duplas Preto
+* Prancha Nano Titanium Escova Mágica Alisadora Cores Sortidas
+* Faqueiro Inox Búzios 72 Peças
+* Acqua Posto Nig Brinquedos
+* Quarto Bebê Guarda Roupa E Cômoda Doce Sonho Qmovi Branco Rosa
+* Faqueiro Inox Tramontina Búzios 24 Peças
+* Purificador Água Polar Basic Natural Prata
+* Base Dermacol Embalagem 4 Gramas Fracionada Cor 223
+* Conjunto Panelas Teflon antiaderente 13 peças
+* Prancha Chapinha Nano Titanium 450 ° F
+
+10 - Quais produtos têm mais elogios sobre qualidade? 
+
+Com Review:
+
+Resposta: Os produtos com mais elogios sobre qualidade são:
+
+* Faqueiro Aço Inox Laguna 91 Peças Tramontina
+* Faqueiro Inox Búzios 72 Peças Tramontina
+* Copo Acrílico Canudo 500ml Rocie
+* Portacápsulas Giratório Cromado 32 Cápsulas
+* Vinagre Maçã Orgânico 500 Ml 100 Natural
+* Kit Prancha Chapinha Nano Titanium 450 ° F e Modelador Cachos Nano Titanium
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo
+
+
+********temperature 0.0******
+
+1 - Qual produto é recomendado para tomar um café?
+
+Com Review: 
+
+Com base nas informações fornecidas, não é possível determinar qual produto é recomendado para tomar um café, pois o contexto não contém informações sobre as características ou preferências dos produtos em relação ao preparo de café.
+
+
+2 - Qual produto é recomendado para fazer macarrão?
+
+Com Review: 
+
+Resposta: Máquina Macarrão Atlas 150   Marcato
+
+
+3 - Eu trabalho com computação, qual é uma boa opção para comprar para minha área de atuação?
+
+Com Review:
+
+Resposta: **Computador Premium Dragon Intel Core G3260 8 gb Ddr3 Kingstongeforce Gt210 1gb1 tb 500w Realhdmi**
+
+* **Avaliação:** 3
+* **Características:** Computador com processador Intel Core G3260, 8 GB de memória RAM DDR3, placa de vídeo GeForce GT210 com 1 GB de memória dedicada, HD de 1 TB e fonte de alimentação de 500W.
+* **Recomendação:** Esta opção pode ser adequada para tarefas básicas de computação, como processamento de texto, navegação na web e uso de aplicativos de escritório. No entanto, pode não ser ideal para tarefas mais exigentes, como edição de vídeo ou jogos.
+
+**Notebook Asus Z550SAXX002 T Intel Celeron Quad Core 4 GB 500 GB Tela LED 156 Windows 10   Branco**
+
+* **Avaliação:** 5
+* **Características:** Notebook com processador Intel Celeron Quad Core, 4 GB de memória RAM, HD de 500 GB, tela LED de 15,6 polegadas e sistema operacional Windows 10.
+* **Recomendação:** Este notebook é uma boa opção para quem busca um dispositivo portátil e acessível para tarefas básicas de computação, como navegação na web, uso de aplicativos de escritório e consumo de conteúdo multimídia.
+
+**PC Gamer Rawar RW254PAZ INTEL I5 7400 8 GB Geforce GTX1060 6 GB 1 TB**
+
+* **Avaliação:** 5
+* **Características:** Computador gamer com processador Intel Core i5 7400, 8 GB de memória RAM, placa de vídeo GeForce GTX1060 com 6 GB de memória dedicada, HD de 1 TB e sistema operacional Windows 10.
+* **Recomendação:** Esta opção é altamente recomendada para quem busca um computador potente para jogos e outras tarefas exigentes, como edição de vídeo e design gráfico.
+
+**Notebook Lenovo Ideapad 320 Intel ® Core i57200u 8 GB 1 TB Tela 156 Windows 10   prata**
+
+* **Avaliação:** 5
+* **Características:** Notebook com processador Intel Core i5 7200u, 8 GB de memória RAM, HD de 1 TB, tela de 15,6 polegadas e sistema operacional Windows 10.
+* **Recomendação:** Este notebook é uma boa escolha para quem busca um dispositivo equilibrado para tarefas de computação geral, incluindo uso de aplicativos de escritório, navegação na web e consumo de conteúdo multimídia.
+
+**Notebook Dell Inspiron i155566A30P Intel Core 7 i5 4 GB 1 TB Tela LED 156 Windows 10   Preto**
+
+* **Avaliação:** 5
+* **Características:** Notebook com processador Intel Core i5 7ª geração, 4 GB de memória RAM, HD de 1 TB, tela LED de 15,6 polegadas e sistema operacional Windows 10.
+* **Recomendação:** Este notebook é uma opção premium para quem busca um dispositivo potente e confiável para tarefas exigentes, como edição de vídeo, design gráfico e jogos.
+
+4 - Qual é a nota média dada para produtos da marca Asus?
+
+Com Review:
+
+A informação fornecida não contém dados sobre a nota média dada para produtos da marca Asus. Portanto, não é possível responder à pergunta com base no contexto fornecido.
+
+5 - Quais são as categorias com a maior quantidade de reviews positivas e os produtos relacionados à elas?
+
+Com Review:
+
+Resposta: **Categorias com a maior quantidade de reviews positivas:**
+
+* **Livros:** 12 reviews positivas
+* **Utilidades Domésticas:** 7 reviews positivas
+* **Beleza e Perfumaria:** 6 reviews positivas
+* **Brinquedos:** 6 reviews positivas
+* **Moda:** 2 reviews positivas
+
+**Produtos relacionados às categorias com a maior quantidade de reviews positivas:**
+
+**Livros:**
+* Livro Vidas Boas
+* Livro Mulher Confiante
+* Livro Investigador Sótãos
+* Livro Diário Amor Inteligente
+* Livro 1000 Lugares Conhecer Antes Morrer
+* Livro Arte Cinema Introdução
+* Livro Padres Amanhã
+
+**Utilidades Domésticas:**
+* Portacápsulas Giratório Cromado 32 Cápsulas
+* Faqueiro Inox Búzios 72 Peças
+* Máquina Macarrão Atlas 150
+* Porta Tampinhas Moldura Mt P
+* Faqueiro Aço Inox Laguna 91 Peças
+* Copo Acrílico Canudo 500ml Rocie
+* Lençol Elástico volta Toda Avulso Queen 170 Fios Pink
+
+**Beleza e Perfumaria:**
+* Modelador Cachos Preto
+* Prancha Escova Removedora Pontas Duplas Fasiz Split Corte
+* Felps Profissional Óleo Marula 50ml
+
+**Brinquedos:**
+* Brinquedo Bebe Galinha Pintadinha Livro Sonoro
+* Boneca Brinquedo Maquiar Magic Top Model
+* Totoka Plus Cardoso Brinquedos Eletrônica Menina
+* Perfil Junior Volume 2 Grow
+
+**Moda:**
+* Tênis Casual Conforto Beira Rio
+* Mochila Mickey Preta
+
+6 - Com base em produtos que são copos, quais o principal motivo de serem ruins, de acordo com os compradores, quais são esses copos?
+
+Com Review:
+
+Resposta: **Principais motivos de avaliações ruins para copos:**
+
+* **Frete caro ou abusivo:** Vários compradores reclamaram do alto custo do frete, o que pode tornar o produto menos atraente.
+* **Qualidade questionável:** Alguns compradores relataram que os copos são frágeis ou têm problemas de aderência.
+* **Preço alto:** Alguns compradores consideraram o preço dos copos muito alto para a qualidade percebida.
+* **Engano na propaganda:** Um comprador reclamou de propaganda enganosa, sugerindo que o produto não atendeu às expectativas.
+* **Problemas de entrega:** Um comprador relatou problemas com a entrega, o que pode ser frustrante e inconveniente.
+
+7 - Qual é o produto mais bem avaliado na categoria Utensílios Domésticos?
+
+Com Review:
+
+Resposta: Kit 06 Portas Condimento Tempero Inox Magnético Imã Geladeira
+
+8 - Quais marcas têm maior número de reviews com nota máxima (nota igual a 5)? E quais são esses produtos? 
+
+Com Review:
+
+Resposta: **Marcas com maior número de reviews com nota máxima (5):**
+
+* **Tramontina:**
+    * Faqueiro Aço Inox Laguna 91 Peças
+    * Faqueiro Inox Búzios 72 Peças
+* **Rocie:**
+    * Copo Acrílico Canudo 500ml
+* **Santista:**
+    * Cobre Leito King Luiza 2 Porta Travesseiros Percal 200 Fios Rosa
+* **Gtech:**
+    * Bomba TiraLeite Materno Manual GTech Confort
+* **Felps Profissional:**
+    * Óleo Marula 50ml
+* **Britanio:**
+    * Prancha Cabelo Britânia Tourmaline Aqua Bivolt Roxo e prata
+
+9 - Quais produtos têm mais reclamações sobre qualidade?
+
+Com Review:
+
+Resposta: Os produtos com mais reclamações sobre qualidade são:
+
+* Pipoqueira Cadence Pop Branca
+* Eliminadora e Removedora Pontas Duplas   Preto
+* Prancha Nano Titanium   Escova Mágica Alisadora   Cores Sortidas
+* Faqueiro Inox Búzios 72 Peças   Tramontina
+* Acqua Posto   Nig Brinquedos
+* Quarto Bebê Guarda Roupa E Cômoda Doce Sonho Qmovi   Branco   Rosa
+* Faqueiro Inox Tramontina Búzios 24 Peças
+* Purificador Água Polar Basic Natural Prata
+* Base Dermacol Embalagem 4 Gramas Fracionada Cor 223
+* Conjunto Panelas Teflon antiaderente 13 peça
+* Prancha Chapinha Nano Titanium 450 ° F
+
+10 - Quais produtos têm mais elogios sobre qualidade? 
+
+Com Review:
+
+Resposta: Os produtos com mais elogios sobre qualidade são:
+
+* Faqueiro Aço Inox Laguna 91 Peças Tramontina
+* Faqueiro Inox Búzios 72 Peças Tramontina
+* Copo Acrílico Canudo 500ml Rocie
+* Portacápsulas Giratório Cromado 32 Cápsulas
+* Vinagre Maçã Orgânico 500 Ml 100 Natural
+* Kit Prancha Chapinha Nano Titanium 450 ° F e Modelador Cachos Nano Titanium
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo 500ml Rocie
+* Copo Acrílico Canudo
+
+
+
+
